@@ -9,6 +9,7 @@ const Mentors = () => {
   const mentors = [
     {
       id: 1,
+      slug: "phan-huynh-anh",
       name: "Phan Huỳnh Anh",
       title: "Senior Full-stack Developer",
       company: "Google",
