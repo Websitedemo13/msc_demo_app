@@ -1,5 +1,6 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -105,5 +106,43 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .msc-hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white;
+  }
+
+  .msc-section-title {
+    @apply text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-gray-900;
+  }
+
+  .msc-subtitle {
+    @apply text-lg md:text-xl text-gray-600 font-sans;
+  }
+
+  .msc-gradient-bg {
+    @apply bg-msc-gradient;
+  }
+
+  .msc-hero-bg {
+    @apply bg-msc-hero;
+  }
+
+  .msc-button-primary {
+    @apply bg-msc-primary hover:bg-msc-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200;
+  }
+
+  .msc-button-secondary {
+    @apply bg-white text-msc-primary border-2 border-msc-primary hover:bg-msc-primary hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200;
   }
 }
