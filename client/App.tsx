@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Training from "./pages/Training";
 import Projects from "./pages/Projects";
 import Mentors from "./pages/Mentors";
+import MentorDetail from "./pages/MentorDetail";
 import MSCer from "./pages/MSCer";
 import Partners from "./pages/Partners";
 import Articles from "./pages/Articles";
