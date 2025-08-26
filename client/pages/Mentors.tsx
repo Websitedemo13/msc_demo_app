@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Users, MapPin, Star, ExternalLink, Linkedin, Github, Twitter } from "lucide-react";
 
 const Mentors = () => {
@@ -151,7 +152,7 @@ const Mentors = () => {
               Đội ngũ Mentor xuất sắc
             </h2>
             <p className="msc-subtitle max-w-2xl mx-auto">
-              Các chuyên gia h��ng đầu từ những công ty công nghệ lớn nhất thế giới
+              Các chuyên gia hàng đầu từ những công ty công nghệ lớn nhất thế giới
             </p>
           </div>
 
