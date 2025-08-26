@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Header from "./Header";
+import FloatingActionButtons from "./FloatingActionButtons";
 
 interface LayoutProps {
   children: ReactNode;
