@@ -87,7 +87,7 @@ const Mentors = () => {
       students: 75,
       experience: "4+ năm kinh nghiệm",
       skills: ["React Native", "Flutter", "iOS", "Android", "Firebase"],
-      bio: "Chuyên gia phát tri���n ứng dụng di động với kinh nghiệm xây dựng các app có hàng triệu người dùng. Đam mê về mobile technology và user experience.",
+      bio: "Chuyên gia phát triển ứng dụng di động với kinh nghiệm xây dựng các app có hàng triệu người dùng. Đam mê về mobile technology và user experience.",
       social: {
         linkedin: "#",
         github: "#"
@@ -151,7 +151,7 @@ const Mentors = () => {
               Đội ngũ Mentor xuất sắc
             </h2>
             <p className="msc-subtitle max-w-2xl mx-auto">
-              Các chuyên gia hàng đầu từ những công ty công nghệ lớn nhất thế giới
+              Các chuyên gia h��ng đầu từ những công ty công nghệ lớn nhất thế giới
             </p>
           </div>
 
@@ -243,10 +243,12 @@ const Mentors = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Button className="w-full msc-button-primary">
-                    Xem hồ sơ chi tiết
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
+                  <Link to={`/mentors/phan-huynh-anh`}>
+                    <Button className="w-full msc-button-primary">
+                      Xem hồ sơ chi tiết
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
