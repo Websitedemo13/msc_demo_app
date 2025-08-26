@@ -44,14 +44,24 @@ const Header = () => {
                 <Globe className="w-4 h-4" />
                 <span>VN</span>
               </div>
-              <Link to="/login" className="flex items-center space-x-1 hover:text-blue-200 transition-colors">
+              <Link
+                to="/login"
+                className="flex items-center space-x-1 hover:text-blue-200 transition-colors"
+              >
                 <User className="w-4 h-4" />
                 <span>Đăng nh��p</span>
               </Link>
-              <Link to="/register" className="bg-white text-msc-primary px-3 py-1 rounded text-sm font-medium hover:bg-blue-50 transition-colors">
+              <Link
+                to="/register"
+                className="bg-white text-msc-primary px-3 py-1 rounded text-sm font-medium hover:bg-blue-50 transition-colors"
+              >
                 Đăng ký
               </Link>
-              <Button variant="outline" size="sm" className="text-white border-white hover:bg-white hover:text-msc-primary">
+              <Button
+                variant="outline"
+                size="sm"
+                className="text-white border-white hover:bg-white hover:text-msc-primary"
+              >
                 Hỗ sơ năng lực
               </Button>
             </div>
@@ -69,7 +79,9 @@ const Header = () => {
                 <span className="text-white font-bold text-lg">MSC</span>
               </div>
               <div>
-                <div className="text-xl font-bold text-gray-900">MSC CENTER</div>
+                <div className="text-xl font-bold text-gray-900">
+                  MSC CENTER
+                </div>
                 <div className="text-xs text-gray-600">UEH UNIVERSITY</div>
               </div>
             </div>
@@ -97,7 +109,11 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 rounded-md text-gray-700 hover:text-msc-primary hover:bg-gray-100 transition-colors"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 

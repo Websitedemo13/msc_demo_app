@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Plus, 
-  X, 
-  ArrowUp, 
-  MessageSquareText, 
-  Youtube, 
-  Linkedin, 
-  Facebook 
+import {
+  Plus,
+  X,
+  ArrowUp,
+  MessageSquareText,
+  Youtube,
+  Linkedin,
+  Facebook,
 } from "lucide-react";
 
 /**
@@ -28,15 +28,15 @@ const FloatingActionButtons = () => {
       setShowScrollTop(window.scrollY > 400);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
     setIsOpen(false);
   };
@@ -64,50 +64,54 @@ const FloatingActionButtons = () => {
 
   // Action buttons configuration
   const actionButtons = [
-    ...(showScrollTop ? [{
-      id: 'scroll-top',
-      icon: ArrowUp,
-      action: scrollToTop,
-      hoverColor: 'hover:text-msc-primary hover:bg-msc-blue-50',
-      label: 'Lên đầu trang'
-    }] : []),
+    ...(showScrollTop
+      ? [
+          {
+            id: "scroll-top",
+            icon: ArrowUp,
+            action: scrollToTop,
+            hoverColor: "hover:text-msc-primary hover:bg-msc-blue-50",
+            label: "Lên đầu trang",
+          },
+        ]
+      : []),
     {
-      id: 'chat',
+      id: "chat",
       icon: MessageSquareText,
       action: openChat,
-      hoverColor: 'hover:text-teal-600 hover:bg-teal-50',
-      label: 'Chat với Assistant'
+      hoverColor: "hover:text-teal-600 hover:bg-teal-50",
+      label: "Chat với Assistant",
     },
     {
-      id: 'youtube',
+      id: "youtube",
       icon: Youtube,
       action: openYouTube,
-      hoverColor: 'hover:text-red-600 hover:bg-red-50',
-      label: 'YouTube'
+      hoverColor: "hover:text-red-600 hover:bg-red-50",
+      label: "YouTube",
     },
     {
-      id: 'linkedin',
+      id: "linkedin",
       icon: Linkedin,
       action: openLinkedIn,
-      hoverColor: 'hover:text-blue-600 hover:bg-blue-50',
-      label: 'LinkedIn'
+      hoverColor: "hover:text-blue-600 hover:bg-blue-50",
+      label: "LinkedIn",
     },
     {
-      id: 'facebook',
+      id: "facebook",
       icon: Facebook,
       action: openFacebook,
-      hoverColor: 'hover:text-blue-500 hover:bg-blue-50',
-      label: 'Facebook'
-    }
+      hoverColor: "hover:text-blue-500 hover:bg-blue-50",
+      label: "Facebook",
+    },
   ];
 
   // Animation variants for secondary buttons
   const buttonVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 0.3,
       x: 0,
-      y: 0
+      y: 0,
     },
     visible: (custom: number) => ({
       opacity: 1,
@@ -118,8 +122,8 @@ const FloatingActionButtons = () => {
         type: "spring",
         stiffness: 500,
         damping: 30,
-        delay: custom * 0.1
-      }
+        delay: custom * 0.1,
+      },
     }),
     exit: {
       opacity: 0,
@@ -127,15 +131,15 @@ const FloatingActionButtons = () => {
       x: 0,
       y: 0,
       transition: {
-        duration: 0.2
-      }
-    }
+        duration: 0.2,
+      },
+    },
   };
 
   // Primary button icon animation
   const primaryIconVariants = {
     closed: { rotate: 0 },
-    open: { rotate: 45 }
+    open: { rotate: 45 },
   };
 
   return (
@@ -168,7 +172,7 @@ const FloatingActionButtons = () => {
                   </Button>
                 </motion.div>
               ))}
-              
+
               {/* Overlay backdrop for mobile */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -182,10 +186,7 @@ const FloatingActionButtons = () => {
         </AnimatePresence>
 
         {/* Primary FAB Button */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button
             onClick={() => setIsOpen(!isOpen)}
             className="

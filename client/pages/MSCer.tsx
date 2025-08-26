@@ -2,7 +2,17 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Users, MapPin, Building, Calendar, ExternalLink, Linkedin, Github, Star, TrendingUp } from "lucide-react";
+import {
+  Users,
+  MapPin,
+  Building,
+  Calendar,
+  ExternalLink,
+  Linkedin,
+  Github,
+  Star,
+  TrendingUp,
+} from "lucide-react";
 
 const MSCer = () => {
   const mscers = [
@@ -18,11 +28,12 @@ const MSCer = () => {
       achievement: "Promoted to Senior Engineer in 18 months",
       currentSalary: "$180,000",
       skills: ["React", "Go", "Kubernetes", "GCP"],
-      story: "Từ một sinh viên IT thông thường, Khánh đã trở thành Senior Software Engineer tại Google nhờ những kiến thức và kỹ năng học được tại MSC Center.",
+      story:
+        "Từ một sinh viên IT thông thường, Khánh đã trở thành Senior Software Engineer tại Google nhờ những kiến thức và kỹ năng học được tại MSC Center.",
       social: {
         linkedin: "#",
-        github: "#"
-      }
+        github: "#",
+      },
     },
     {
       id: 2,
@@ -36,11 +47,12 @@ const MSCer = () => {
       achievement: "Led AI project impacting 2B+ users",
       currentSalary: "$165,000",
       skills: ["Python", "TensorFlow", "SQL", "Statistics"],
-      story: "Hà đã chuyển đổi thành công từ ngành tài chính sang Data Science và hiện đang dẫn dắt các dự án AI quan trọng tại Meta.",
+      story:
+        "Hà đã chuyển đổi thành công từ ngành tài chính sang Data Science và hiện đang dẫn dắt các dự án AI quan trọng tại Meta.",
       social: {
         linkedin: "#",
-        github: "#"
-      }
+        github: "#",
+      },
     },
     {
       id: 3,
@@ -54,11 +66,12 @@ const MSCer = () => {
       achievement: "Built platform serving 150M users",
       currentSalary: "$120,000",
       skills: ["Java", "Microservices", "AWS", "Docker"],
-      story: "Tuấn đã xây dựng và dẫn dắt team phát triển platform phục vụ hàng trăm triệu người dùng tại Shopee.",
+      story:
+        "Tuấn đã xây dựng và dẫn dắt team phát triển platform phục vụ hàng trăm triệu người dùng tại Shopee.",
       social: {
         linkedin: "#",
-        github: "#"
-      }
+        github: "#",
+      },
     },
     {
       id: 4,
@@ -72,10 +85,11 @@ const MSCer = () => {
       achievement: "Redesigned app used by 50M+ users",
       currentSalary: "$85,000",
       skills: ["Figma", "User Research", "Design Systems", "Prototyping"],
-      story: "Châu đã dẫn dắt việc thiết kế lại ứng dụng Grab, cải thiện trải nghiệm cho hàng chục triệu người dùng.",
+      story:
+        "Châu đã dẫn dắt việc thiết kế lại ứng dụng Grab, cải thiện trải nghiệm cho hàng chục triệu người dùng.",
       social: {
-        linkedin: "#"
-      }
+        linkedin: "#",
+      },
     },
     {
       id: 5,
@@ -89,11 +103,12 @@ const MSCer = () => {
       achievement: "Reduced deployment time by 85%",
       currentSalary: "$70,000",
       skills: ["AWS", "Terraform", "Jenkins", "Monitoring"],
-      story: "Nam đã cách mạng hóa quy trình deployment tại Zalo, giúp team phát triển nhanh hơn và ổn định hơn.",
+      story:
+        "Nam đã cách mạng hóa quy trình deployment tại Zalo, giúp team phát triển nhanh hơn và ổn định hơn.",
       social: {
         linkedin: "#",
-        github: "#"
-      }
+        github: "#",
+      },
     },
     {
       id: 6,
@@ -107,11 +122,12 @@ const MSCer = () => {
       achievement: "Increased ROI by 300% in Q1",
       currentSalary: "$60,000",
       skills: ["Google Ads", "Facebook Ads", "SEO", "Analytics"],
-      story: "Lan Anh đã tăng ROI của các chiến dịch marketing tại Tiki lên 300% chỉ trong quý đầu tiên làm việc.",
+      story:
+        "Lan Anh đã tăng ROI của các chiến dịch marketing tại Tiki lên 300% chỉ trong quý đầu tiên làm việc.",
       social: {
-        linkedin: "#"
-      }
-    }
+        linkedin: "#",
+      },
+    },
   ];
 
   const stats = [
@@ -119,26 +135,26 @@ const MSCer = () => {
       label: "Tỷ lệ có việc làm",
       value: "98%",
       icon: TrendingUp,
-      description: "Trong vòng 6 tháng sau tốt nghiệp"
+      description: "Trong vòng 6 tháng sau tốt nghiệp",
     },
     {
       label: "Mức lương trung bình",
       value: "$75K",
       icon: Star,
-      description: "Mức lương khởi điểm"
+      description: "Mức lương khởi điểm",
     },
     {
       label: "Tăng lương",
       value: "150%",
       icon: TrendingUp,
-      description: "Trong 2 năm đầu"
+      description: "Trong 2 năm đầu",
     },
     {
       label: "MSCer thành công",
       value: "500+",
       icon: Users,
-      description: "Đang làm việc tại các công ty lớn"
-    }
+      description: "Đang làm việc tại các công ty lớn",
+    },
   ];
 
   return (
@@ -148,9 +164,12 @@ const MSCer = () => {
         {/* Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-blue-700/30 to-blue-500/20"></div>
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20l10-10v20l-10-10zm0 0l-10 10h20l-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20l10-10v20l-10-10zm0 0l-10 10h20l-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
         {/* Hero Content */}
@@ -159,14 +178,14 @@ const MSCer = () => {
             <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <Users className="w-10 h-10 text-white" />
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
               Cộng đồng MSCer
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Nơi hội tụ những câu chuyện thành công, những gương mặt ưu tú đã trưởng thành từ các chương trình 
-              đào tạo của MSC Center.
+              Nơi hội tụ những câu chuyện thành công, những gương mặt ưu tú đã
+              trưởng thành từ các chương trình đào tạo của MSC Center.
             </p>
           </div>
         </div>
@@ -190,8 +209,12 @@ const MSCer = () => {
                 <div className="w-16 h-16 bg-msc-gradient rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold text-msc-primary mb-1">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-lg font-semibold text-msc-primary mb-1">
+                  {stat.label}
+                </div>
                 <div className="text-sm text-gray-600">{stat.description}</div>
               </div>
             ))}
@@ -207,17 +230,24 @@ const MSCer = () => {
               Những câu chuyện thành công
             </h2>
             <p className="msc-subtitle max-w-2xl mx-auto">
-              Gặp gỡ những MSCer đang tỏa sáng tại các công ty công nghệ hàng đầu thế giới
+              Gặp gỡ những MSCer đang tỏa sáng tại các công ty công nghệ hàng
+              đầu thế giới
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mscers.map((mscer) => (
-              <Card key={mscer.id} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <Card
+                key={mscer.id}
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
                 <CardContent className="p-6">
                   {/* Header with graduation year */}
                   <div className="flex justify-between items-start mb-4">
-                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                    <Badge
+                      variant="secondary"
+                      className="bg-green-100 text-green-800"
+                    >
                       Class of {mscer.graduationYear}
                     </Badge>
                     <Badge variant="outline" className="text-xs">
@@ -235,8 +265,12 @@ const MSCer = () => {
                         <Star className="w-4 h-4 text-white fill-current" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-1">{mscer.name}</h3>
-                    <p className="text-msc-primary font-medium mb-1">{mscer.title}</p>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                      {mscer.name}
+                    </h3>
+                    <p className="text-msc-primary font-medium mb-1">
+                      {mscer.title}
+                    </p>
                     <div className="flex items-center justify-center space-x-2 text-sm text-gray-600 mb-2">
                       <Building className="w-4 h-4" />
                       <span>{mscer.company}</span>
@@ -251,23 +285,37 @@ const MSCer = () => {
                   <div className="bg-yellow-50 rounded-lg p-4 mb-6">
                     <div className="flex items-center space-x-2 mb-2">
                       <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-semibold text-yellow-800">Thành tích nổi bật</span>
+                      <span className="text-sm font-semibold text-yellow-800">
+                        Thành tích nổi bật
+                      </span>
                     </div>
-                    <p className="text-sm text-yellow-700">{mscer.achievement}</p>
+                    <p className="text-sm text-yellow-700">
+                      {mscer.achievement}
+                    </p>
                   </div>
 
                   {/* Salary Info */}
                   <div className="bg-green-50 rounded-lg p-3 mb-6 text-center">
-                    <div className="text-lg font-bold text-green-800 mb-1">{mscer.currentSalary}</div>
-                    <div className="text-xs text-green-600">Mức lương hiện tại (USD/năm)</div>
+                    <div className="text-lg font-bold text-green-800 mb-1">
+                      {mscer.currentSalary}
+                    </div>
+                    <div className="text-xs text-green-600">
+                      Mức lương hiện tại (USD/năm)
+                    </div>
                   </div>
 
                   {/* Skills */}
                   <div className="mb-6">
-                    <div className="text-sm font-semibold text-gray-700 mb-2">Kỹ năng chính:</div>
+                    <div className="text-sm font-semibold text-gray-700 mb-2">
+                      Kỹ năng chính:
+                    </div>
                     <div className="flex flex-wrap gap-2">
                       {mscer.skills.map((skill, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
+                        <Badge
+                          key={index}
+                          variant="outline"
+                          className="text-xs"
+                        >
                           {skill}
                         </Badge>
                       ))}
@@ -282,12 +330,18 @@ const MSCer = () => {
                   {/* Social Links */}
                   <div className="flex justify-center space-x-3 mb-6">
                     {mscer.social.linkedin && (
-                      <a href={mscer.social.linkedin} className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                      <a
+                        href={mscer.social.linkedin}
+                        className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
+                      >
                         <Linkedin className="w-4 h-4" />
                       </a>
                     )}
                     {mscer.social.github && (
-                      <a href={mscer.social.github} className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
+                      <a
+                        href={mscer.social.github}
+                        className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors"
+                      >
                         <Github className="w-4 h-4" />
                       </a>
                     )}
@@ -312,8 +366,8 @@ const MSCer = () => {
             Bạn muốn trở thành MSCer tiếp theo?
           </h2>
           <p className="msc-subtitle mb-8 max-w-2xl mx-auto">
-            Tham gia cộng đồng MSC và bắt đầu hành trình chinh phục ước mơ của bạn. 
-            Thành công đang chờ đón phía trước!
+            Tham gia cộng đồng MSC và bắt đầu hành trình chinh phục ước mơ của
+            bạn. Thành công đang chờ đón phía trước!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="msc-button-primary">
@@ -335,10 +389,14 @@ const MSCer = () => {
               Mạng lưới Alumni MSC
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Kết nối với hơn 500+ cựu học viên MSC đang làm việc tại các công ty hàng đầu. 
-              Chia sẻ cơ hội nghề nghiệp, kinh nghiệm và hỗ trợ lẫn nhau phát triển.
+              Kết nối với hơn 500+ cựu học viên MSC đang làm việc tại các công
+              ty hàng đầu. Chia sẻ cơ hội nghề nghiệp, kinh nghiệm và hỗ trợ lẫn
+              nhau phát triển.
             </p>
-            <Button variant="secondary" className="bg-white text-msc-primary hover:bg-blue-50 px-8 py-4 h-auto text-lg">
+            <Button
+              variant="secondary"
+              className="bg-white text-msc-primary hover:bg-blue-50 px-8 py-4 h-auto text-lg"
+            >
               Tham gia mạng lưới Alumni
               <Users className="ml-2 w-5 h-5" />
             </Button>

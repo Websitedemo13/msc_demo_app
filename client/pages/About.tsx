@@ -17,13 +17,14 @@ const About = () => {
             <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <Lightbulb className="w-10 h-10 text-white" />
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
               Về MSC Center
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Trung tâm đào tạo và phát triển kỹ năng hàng đầu, nơi ươm mầm những tài năng công nghệ tương lai.
+              Trung tâm đào tạo và phát triển kỹ năng hàng đầu, nơi ươm mầm
+              những tài năng công nghệ tương lai.
             </p>
           </div>
         </div>
@@ -41,13 +42,11 @@ const About = () => {
                 Trang đang được phát triển
               </h2>
               <p className="text-gray-600 mb-6">
-                Nội dung chi tiết về MSC Center đang được hoàn thiện. 
-                Vui lòng quay lại sau hoặc liên hệ với chúng tôi để biết thêm thông tin.
+                Nội dung chi tiết về MSC Center đang được hoàn thiện. Vui lòng
+                quay lại sau hoặc liên hệ với chúng tôi để biết thêm thông tin.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="msc-button-primary">
-                  Liên hệ tư vấn
-                </Button>
+                <Button className="msc-button-primary">Liên hệ tư vấn</Button>
                 <Button variant="outline" className="msc-button-secondary">
                   Về trang chủ
                 </Button>

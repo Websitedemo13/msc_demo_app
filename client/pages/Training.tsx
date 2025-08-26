@@ -16,7 +16,8 @@ const Training = () => {
               Đào Tạo
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Các chương trình đào tạo chuyên nghiệp được thiết kế phù hợp với nhu cầu thị trường.
+              Các chương trình đào tạo chuyên nghiệp được thiết kế phù hợp với
+              nhu cầu thị trường.
             </p>
           </div>
         </div>
@@ -33,8 +34,8 @@ const Training = () => {
                 Khóa học đang được cập nhật
               </h2>
               <p className="text-gray-600 mb-6">
-                Danh sách các khóa học và chương trình đào tạo đang được hoàn thiện. 
-                Hãy theo dõi để không bỏ lỡ thông tin mới nhất!
+                Danh sách các khóa học và chương trình đào tạo đang được hoàn
+                thiện. Hãy theo dõi để không bỏ lỡ thông tin mới nhất!
               </p>
               <Button className="msc-button-primary">
                 Đăng ký nhận thông báo

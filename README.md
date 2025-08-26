@@ -13,12 +13,14 @@ MSC Center là một ứng dụng web hiện đại được phát triển để
 ## 🌟 Tính năng chính
 
 ### 🎯 Trang chủ Hero Section
+
 - Thiết kế hero section ấn tượng với gradient xanh dương đặc trung
 - Hiệu ứng hình học và animation mượt mà
 - Call-to-action buttons với micro-interactions
 - Thống kê thành tích của trung tâm
 
 ### 👨‍🏫 Ban Giảng Huấn (Mentors)
+
 - Showcase đội ngũ mentor chuyên nghiệp
 - Profile cards với thông tin chi tiết
 - Rating và đánh giá từ học viên
@@ -26,12 +28,14 @@ MSC Center là một ứng dụng web hiện đại được phát triển để
 - Responsive grid layout
 
 ### 🎓 Cộng đồng MSCer
+
 - Câu chuyện thành công của cựu học viên
 - Thông tin mức lương và achievement
 - Alumni network và success stories
 - Integration với LinkedIn profiles
 
 ### 🔐 Hệ thống Authentication
+
 - **Demo Login Accounts:**
   - `admin@msc.edu.vn` / `admin123` (Admin)
   - `student@msc.edu.vn` / `student123` (Student)
@@ -41,6 +45,7 @@ MSC Center là một ứng dụng web hiện đại được phát triển để
 - Responsive design trên mọi thiết bị
 
 ### 📱 Responsive Design
+
 - Mobile-first approach
 - Breakpoints tối ưu cho mọi thiết bị
 - Touch-friendly interface
@@ -49,6 +54,7 @@ MSC Center là một ứng dụng web hiện đại được phát triển để
 ## 🛠️ Công nghệ sử dụng
 
 ### Frontend Stack
+
 - **React 18.3.1** - Thư viện UI hiện đại
 - **TypeScript 5.9.2** - Type safety và developer experience
 - **Vite 7.1.2** - Build tool nhanh chóng
@@ -56,17 +62,20 @@ MSC Center là một ứng dụng web hiện đại được phát triển để
 - **TailwindCSS 3.4.17** - Utility-first CSS framework
 
 ### UI Framework
+
 - **Radix UI** - Accessible component primitives
 - **Shadcn/ui** - Beautiful component library
 - **Lucide React** - Icon library
 - **Framer Motion** - Animation library
 
 ### Backend Integration
+
 - **Express.js** - API server
 - **PNPM** - Package manager
 - **Tanstack Query** - Data fetching và caching
 
 ### Development Tools
+
 - **Vitest** - Unit testing framework
 - **Prettier** - Code formatting
 - **ESLint** - Code linting
@@ -75,17 +84,20 @@ MSC Center là một ứng dụng web hiện đại được phát triển để
 ## 🚀 Cài đặt và chạy dự án
 
 ### Yêu cầu hệ thống
+
 - **Node.js** >= 18.0.0
 - **PNPM** >= 8.0.0 (recommended)
 - **Git** cho version control
 
 ### 1. Clone repository
+
 ```bash
 git clone <repository-url>
 cd msc-center
 ```
 
 ### 2. Cài đặt dependencies
+
 ```bash
 # Sử dụng PNPM (recommended)
 pnpm install
@@ -98,6 +110,7 @@ yarn install
 ```
 
 ### 3. Chạy development server
+
 ```bash
 # Chạy cả frontend và backend
 pnpm dev
@@ -106,6 +119,7 @@ pnpm dev
 ```
 
 ### 4. Build production
+
 ```bash
 # Build cho production
 pnpm build
@@ -115,6 +129,7 @@ pnpm start
 ```
 
 ### 5. Chạy tests
+
 ```bash
 # Chạy unit tests
 pnpm test
@@ -157,22 +172,22 @@ msc-center/
 ## 🎨 Design System
 
 ### Color Palette
+
 ```css
 /* MSC Brand Colors */
---msc-primary: #1f3a93        /* Main brand blue */
---msc-primary-dark: #152a6b   /* Darker blue */
---msc-blue-50: #eff6ff        /* Light blue tints */
---msc-blue-100: #dbeafe
---msc-blue-500: #3b82f6
---msc-blue-900: #1e3a8a
+--msc-primary: #1f3a93 /* Main brand blue */ --msc-primary-dark: #152a6b
+  /* Darker blue */ --msc-blue-50: #eff6ff /* Light blue tints */
+  --msc-blue-100: #dbeafe --msc-blue-500: #3b82f6 --msc-blue-900: #1e3a8a;
 ```
 
 ### Typography
+
 - **Serif Font**: Playfair Display (Headings)
 - **Sans Font**: Inter (Body text)
 - **Font Sizes**: Responsive scale từ text-sm đến text-6xl
 
 ### Components
+
 - **Buttons**: Primary, Secondary, Outline variants
 - **Cards**: Shadow-based với hover effects
 - **Forms**: Accessible với proper validation
@@ -181,12 +196,15 @@ msc-center/
 ## 🌐 Deployment
 
 ### Build Production
+
 ```bash
 pnpm build
 ```
 
 ### Environment Variables
+
 Tạo file `.env.local` với các biến môi trường:
+
 ```env
 # API Configuration
 VITE_API_URL=http://localhost:8080/api
@@ -199,17 +217,20 @@ VITE_FACEBOOK_APP_ID=your_fb_app_id
 ### Deployment Options
 
 #### 1. Netlify (Recommended)
+
 1. Push code lên GitHub
 2. Connect repository với Netlify
 3. Set build command: `pnpm build`
 4. Set publish directory: `dist`
 
 #### 2. Vercel
+
 1. Import project từ GitHub
 2. Vercel sẽ tự detect Vite setup
 3. Deploy tự động
 
 #### 3. Traditional Hosting
+
 ```bash
 pnpm build
 # Upload contents của dist/ folder
@@ -218,15 +239,17 @@ pnpm build
 ## 🧪 Testing
 
 ### Demo Accounts
+
 Sử dụng các tài khoản demo sau để test authentication:
 
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@msc.edu.vn | admin123 |
+| Role    | Email              | Password   |
+| ------- | ------------------ | ---------- |
+| Admin   | admin@msc.edu.vn   | admin123   |
 | Student | student@msc.edu.vn | student123 |
-| Mentor | mentor@msc.edu.vn | mentor123 |
+| Mentor  | mentor@msc.edu.vn  | mentor123  |
 
 ### Test Cases
+
 - ✅ Responsive design trên mobile/tablet/desktop
 - ✅ Navigation và routing
 - ✅ Form validation
@@ -237,11 +260,13 @@ Sử dụng các tài khoản demo sau để test authentication:
 ## 📱 PWA Features
 
 ### Service Worker
+
 - Offline caching strategy
 - Background sync
 - Push notifications (planned)
 
 ### Manifest
+
 - App icons và splash screens
 - Theme colors
 - Standalone mode support
@@ -249,14 +274,18 @@ Sử dụng các tài khoản demo sau để test authentication:
 ## 🔧 Configuration
 
 ### Tailwind CSS
+
 Customization trong `tailwind.config.ts`:
+
 - MSC brand colors
 - Custom gradients
 - Font families
 - Responsive breakpoints
 
 ### Vite
+
 Configuration trong `vite.config.ts`:
+
 - Path aliases (@/ mapping)
 - Build optimization
 - Dev server proxy
@@ -264,12 +293,14 @@ Configuration trong `vite.config.ts`:
 ## 📊 Performance
 
 ### Optimization Techniques
+
 - **Code Splitting**: Route-based chunks
 - **Image Optimization**: WebP format với fallbacks
 - **CSS Optimization**: Tailwind CSS purging
 - **Bundle Analysis**: Source map exploration
 
 ### Metrics
+
 - **First Contentful Paint**: < 1.5s
 - **Largest Contentful Paint**: < 2.5s
 - **Cumulative Layout Shift**: < 0.1
@@ -278,6 +309,7 @@ Configuration trong `vite.config.ts`:
 ## 🤝 Contributing
 
 ### Development Workflow
+
 1. Fork repository
 2. Create feature branch
 3. Make changes với proper commit messages
@@ -285,6 +317,7 @@ Configuration trong `vite.config.ts`:
 5. Submit pull request
 
 ### Code Standards
+
 - TypeScript strict mode
 - ESLint configuration
 - Prettier formatting
@@ -293,12 +326,14 @@ Configuration trong `vite.config.ts`:
 ## 📞 Support & Contact
 
 ### MSC Center
+
 - **Email**: msc.edu.vn@gmail.com
 - **Phone**: (+84) 329 381 489
 - **Address**: UEH University, Ho Chi Minh City
 - **Website**: [msc-fullstack.vercel.app](https://msc-fullstack.vercel.app)
 
 ### Technical Support
+
 - **Issues**: GitHub Issues tracker
 - **Documentation**: `/docs` folder
 - **Community**: Discord server (coming soon)
@@ -311,4 +346,4 @@ Copyright © 2024 MSC Center - UEH University. All rights reserved.
 
 **Made with ❤️ by MSC Development Team**
 
-*Mentoring For Success - Nơi ươm mầm những tài năng công nghệ tương lai*
+_Mentoring For Success - Nơi ươm mầm những tài năng công nghệ tương lai_

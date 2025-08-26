@@ -16,7 +16,8 @@ const Projects = () => {
               Dự Án
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Khám phá những dự án thực tế mà học viên MSC đã thực hiện và triển khai.
+              Khám phá những dự án thực tế mà học viên MSC đã thực hiện và triển
+              khai.
             </p>
           </div>
         </div>
@@ -33,11 +34,10 @@ const Projects = () => {
                 Showcase dự án sắp ra mắt
               </h2>
               <p className="text-gray-600 mb-6">
-                Bộ sưu tập các dự án xuất sắc từ học viên MSC đang được tổng hợp và trình bày.
+                Bộ sưu tập các dự án xuất sắc từ học viên MSC đang được tổng hợp
+                và trình bày.
               </p>
-              <Button className="msc-button-primary">
-                Xem demo dự án
-              </Button>
+              <Button className="msc-button-primary">Xem demo dự án</Button>
             </CardContent>
           </Card>
         </div>

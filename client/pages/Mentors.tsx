@@ -3,7 +3,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, MapPin, Star, ExternalLink, Linkedin, Github, Twitter } from "lucide-react";
+import {
+  Users,
+  MapPin,
+  Star,
+  ExternalLink,
+  Linkedin,
+  Github,
+  Twitter,
+} from "lucide-react";
 
 const Mentors = () => {
   const mentors = [
@@ -23,8 +31,8 @@ const Mentors = () => {
       social: {
         linkedin: "#",
         github: "#",
-        twitter: "#"
-      }
+        twitter: "#",
+      },
     },
     {
       id: 2,
@@ -41,8 +49,8 @@ const Mentors = () => {
       bio: "Chuyên gia về Data Science và Machine Learning, có kinh nghiệm làm việc tại các tập đoàn đa quốc gia. Chuyên về xây dựng các mô hình AI và phân tích dữ liệu lớn.",
       social: {
         linkedin: "#",
-        github: "#"
-      }
+        github: "#",
+      },
     },
     {
       id: 3,
@@ -60,8 +68,8 @@ const Mentors = () => {
       social: {
         linkedin: "#",
         github: "#",
-        twitter: "#"
-      }
+        twitter: "#",
+      },
     },
     {
       id: 4,
@@ -78,8 +86,8 @@ const Mentors = () => {
       bio: "Designer giàu kinh nghiệm trong việc thiết kế trải nghiệm người dùng cho các ứng dụng di động và web. Chuyên về design thinking và user-centered design.",
       social: {
         linkedin: "#",
-        twitter: "#"
-      }
+        twitter: "#",
+      },
     },
     {
       id: 5,
@@ -96,8 +104,8 @@ const Mentors = () => {
       bio: "Chuyên gia phát triển ứng dụng di động với kinh nghiệm xây dựng các app có hàng triệu người dùng. Đam mê về mobile technology và user experience.",
       social: {
         linkedin: "#",
-        github: "#"
-      }
+        github: "#",
+      },
     },
     {
       id: 6,
@@ -110,13 +118,19 @@ const Mentors = () => {
       rating: 4.9,
       students: 130,
       experience: "6+ năm kinh nghiệm",
-      skills: ["Google Ads", "Facebook Ads", "SEO", "Content Marketing", "Analytics"],
+      skills: [
+        "Google Ads",
+        "Facebook Ads",
+        "SEO",
+        "Content Marketing",
+        "Analytics",
+      ],
       bio: "Chuyên gia marketing số với kinh nghiệm quản lý các chiến dịch marketing cho thương hiệu lớn. Thành thạo về growth hacking và performance marketing.",
       social: {
         linkedin: "#",
-        twitter: "#"
-      }
-    }
+        twitter: "#",
+      },
+    },
   ];
 
   return (
@@ -126,9 +140,12 @@ const Mentors = () => {
         {/* Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-blue-700/30 to-blue-500/20"></div>
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20l10-10v20l-10-10zm0 0l-10 10h20l-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20l10-10v20l-10-10zm0 0l-10 10h20l-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
 
         {/* Hero Content */}
@@ -137,14 +154,14 @@ const Mentors = () => {
             <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <Users className="w-10 h-10 text-white" />
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight">
               Ban Giảng Huấn
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Gặp gỡ đội ngũ chuyên gia, những người thầy tâm huyết sẽ đồng hành và dẫn dắt bạn trên hành trình 
-              chinh phục những đỉnh cao mới.
+              Gặp gỡ đội ngũ chuyên gia, những người thầy tâm huyết sẽ đồng hành
+              và dẫn dắt bạn trên hành trình chinh phục những đỉnh cao mới.
             </p>
           </div>
         </div>
@@ -154,17 +171,19 @@ const Mentors = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="msc-section-title mb-4">
-              Đội ngũ Mentor xuất sắc
-            </h2>
+            <h2 className="msc-section-title mb-4">Đội ngũ Mentor xuất sắc</h2>
             <p className="msc-subtitle max-w-2xl mx-auto">
-              Các chuyên gia hàng đầu từ những công ty công nghệ lớn nhất thế giới
+              Các chuyên gia hàng đầu từ những công ty công nghệ lớn nhất thế
+              giới
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mentors.map((mentor) => (
-              <Card key={mentor.id} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <Card
+                key={mentor.id}
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
                 <CardContent className="p-6">
                   {/* Avatar and Basic Info */}
                   <div className="text-center mb-6">
@@ -176,8 +195,12 @@ const Mentors = () => {
                         <div className="w-3 h-3 bg-white rounded-full"></div>
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-1">{mentor.name}</h3>
-                    <p className="text-msc-primary font-medium mb-1">{mentor.title}</p>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-1">
+                      {mentor.name}
+                    </h3>
+                    <p className="text-msc-primary font-medium mb-1">
+                      {mentor.title}
+                    </p>
                     <p className="text-gray-600 text-sm">{mentor.company}</p>
                   </div>
 
@@ -186,25 +209,34 @@ const Mentors = () => {
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-1 text-yellow-500 mb-1">
                         <Star className="w-4 h-4 fill-current" />
-                        <span className="text-sm font-semibold text-gray-900">{mentor.rating}</span>
+                        <span className="text-sm font-semibold text-gray-900">
+                          {mentor.rating}
+                        </span>
                       </div>
                       <div className="text-xs text-gray-500">Rating</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-sm font-semibold text-gray-900 mb-1">{mentor.students}</div>
+                      <div className="text-sm font-semibold text-gray-900 mb-1">
+                        {mentor.students}
+                      </div>
                       <div className="text-xs text-gray-500">Học viên</div>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center space-x-1 mb-1">
                         <MapPin className="w-3 h-3 text-gray-400" />
-                        <span className="text-xs text-gray-600">{mentor.location}</span>
+                        <span className="text-xs text-gray-600">
+                          {mentor.location}
+                        </span>
                       </div>
                     </div>
                   </div>
 
                   {/* Experience Badge */}
                   <div className="flex justify-center mb-4">
-                    <Badge variant="secondary" className="bg-msc-blue-100 text-msc-primary">
+                    <Badge
+                      variant="secondary"
+                      className="bg-msc-blue-100 text-msc-primary"
+                    >
                       {mentor.experience}
                     </Badge>
                   </div>
@@ -213,7 +245,11 @@ const Mentors = () => {
                   <div className="mb-6">
                     <div className="flex flex-wrap gap-2 justify-center">
                       {mentor.skills.slice(0, 4).map((skill, index) => (
-                        <Badge key={index} variant="outline" className="text-xs">
+                        <Badge
+                          key={index}
+                          variant="outline"
+                          className="text-xs"
+                        >
                           {skill}
                         </Badge>
                       ))}
@@ -233,17 +269,26 @@ const Mentors = () => {
                   {/* Social Links */}
                   <div className="flex justify-center space-x-3 mb-6">
                     {mentor.social.linkedin && (
-                      <a href={mentor.social.linkedin} className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
+                      <a
+                        href={mentor.social.linkedin}
+                        className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
+                      >
                         <Linkedin className="w-4 h-4" />
                       </a>
                     )}
                     {mentor.social.github && (
-                      <a href={mentor.social.github} className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors">
+                      <a
+                        href={mentor.social.github}
+                        className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-900 transition-colors"
+                      >
                         <Github className="w-4 h-4" />
                       </a>
                     )}
                     {mentor.social.twitter && (
-                      <a href={mentor.social.twitter} className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
+                      <a
+                        href={mentor.social.twitter}
+                        className="w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors"
+                      >
                         <Twitter className="w-4 h-4" />
                       </a>
                     )}
@@ -266,11 +311,9 @@ const Mentors = () => {
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="msc-section-title mb-6">
-            Bạn muốn trở thành Mentor?
-          </h2>
+          <h2 className="msc-section-title mb-6">Bạn muốn trở thành Mentor?</h2>
           <p className="msc-subtitle mb-8 max-w-2xl mx-auto">
-            Chia sẻ kinh nghiệm và kiến thức của bạn với thế hệ tài năng trẻ. 
+            Chia sẻ kinh nghiệm và kiến thức của bạn với thế hệ tài năng trẻ.
             Gia nhập đội ngũ mentor MSC ngay hôm nay.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

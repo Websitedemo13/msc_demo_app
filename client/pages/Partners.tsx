@@ -16,7 +16,8 @@ const Partners = () => {
               Đối Tác Đồng Hành
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Những đối tác tin cậy đã đồng hành cùng MSC trong hành trình phát triển tài năng.
+              Những đối tác tin cậy đã đồng hành cùng MSC trong hành trình phát
+              triển tài năng.
             </p>
           </div>
         </div>
@@ -33,11 +34,10 @@ const Partners = () => {
                 Mạng lưới đối tác đang mở rộng
               </h2>
               <p className="text-gray-600 mb-6">
-                Danh sách các đối tác và doanh nghiệp hợp tác với MSC đang được cập nhật.
+                Danh sách các đối tác và doanh nghiệp hợp tác với MSC đang được
+                cập nhật.
               </p>
-              <Button className="msc-button-primary">
-                Trở thành đối tác
-              </Button>
+              <Button className="msc-button-primary">Trở thành đối tác</Button>
             </CardContent>
           </Card>
         </div>

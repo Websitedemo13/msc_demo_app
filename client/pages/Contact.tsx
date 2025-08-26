@@ -19,7 +19,8 @@ const Contact = () => {
               Liên Hệ
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Hãy kết nối với chúng tôi. MSC Center luôn sẵn sàng hỗ trợ và tư vấn cho bạn.
+              Hãy kết nối với chúng tôi. MSC Center luôn sẵn sàng hỗ trợ và tư
+              vấn cho bạn.
             </p>
           </div>
         </div>
@@ -33,7 +34,7 @@ const Contact = () => {
               <h2 className="text-3xl font-serif font-bold text-gray-900 mb-8">
                 Thông tin liên hệ
               </h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-msc-gradient rounded-lg flex items-center justify-center">
@@ -50,7 +51,9 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Hotline</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Hotline
+                    </h3>
                     <p className="text-gray-600">(+84) 329 381 489</p>
                   </div>
                 </div>
@@ -60,8 +63,14 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Địa chỉ</h3>
-                    <p className="text-gray-600">UEH University<br />Ho Chi Minh City, Vietnam</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Địa chỉ
+                    </h3>
+                    <p className="text-gray-600">
+                      UEH University
+                      <br />
+                      Ho Chi Minh City, Vietnam
+                    </p>
                   </div>
                 </div>
 
@@ -70,8 +79,14 @@ const Contact = () => {
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Giờ làm việc</h3>
-                    <p className="text-gray-600">Thứ 2 - Thứ 6: 8:00 - 17:00<br />Thứ 7: 8:00 - 12:00</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Giờ làm việc
+                    </h3>
+                    <p className="text-gray-600">
+                      Thứ 2 - Thứ 6: 8:00 - 17:00
+                      <br />
+                      Thứ 7: 8:00 - 12:00
+                    </p>
                   </div>
                 </div>
               </div>
@@ -83,7 +98,7 @@ const Contact = () => {
                 <h2 className="text-2xl font-serif font-bold text-gray-900 mb-6">
                   Gửi tin nhắn cho chúng tôi
                 </h2>
-                
+
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -98,12 +113,20 @@ const Contact = () => {
 
                   <div>
                     <Label htmlFor="email">Email *</Label>
-                    <Input id="email" type="email" placeholder="Nhập email của bạn" />
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Nhập email của bạn"
+                    />
                   </div>
 
                   <div>
                     <Label htmlFor="phone">Số điện thoại</Label>
-                    <Input id="phone" type="tel" placeholder="Nhập số điện thoại" />
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="Nhập số điện thoại"
+                    />
                   </div>
 
                   <div>
@@ -113,9 +136,9 @@ const Contact = () => {
 
                   <div>
                     <Label htmlFor="message">Nội dung *</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Nhập nội dung tin nhắn của bạn..." 
+                    <Textarea
+                      id="message"
+                      placeholder="Nhập nội dung tin nhắn của bạn..."
                       rows={5}
                     />
                   </div>

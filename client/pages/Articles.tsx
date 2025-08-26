@@ -16,7 +16,8 @@ const Articles = () => {
               Góc Nhìn & Chia Sẻ
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Nơi chia sẻ kiến thức, kinh nghiệm và những góc nhìn mới mẻ về công nghệ và phát triển sự nghiệp.
+              Nơi chia sẻ kiến thức, kinh nghiệm và những góc nhìn mới mẻ về
+              công nghệ và phát triển sự nghiệp.
             </p>
           </div>
         </div>
@@ -33,7 +34,8 @@ const Articles = () => {
                 Blog và bài viết sắp ra mắt
               </h2>
               <p className="text-gray-600 mb-6">
-                Kho tàng kiến thức và bài viết chia sẻ từ các chuyên gia đang được xây dựng.
+                Kho tàng kiến thức và bài viết chia sẻ từ các chuyên gia đang
+                được xây dựng.
               </p>
               <Button className="msc-button-primary">
                 Đăng ký nhận bài viết mới
