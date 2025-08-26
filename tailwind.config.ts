@@ -81,6 +81,10 @@ export default {
         'msc-hero': 'linear-gradient(135deg, rgba(31, 58, 147, 0.95) 0%, rgba(37, 99, 235, 0.9) 50%, rgba(59, 130, 246, 0.85) 100%)',
         'msc-geometric': 'linear-gradient(135deg, rgba(31, 58, 147, 0.1) 0%, rgba(37, 99, 235, 0.1) 50%, rgba(59, 130, 246, 0.1) 100%)',
       },
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+        'serif': ['Playfair Display', 'ui-serif', 'Georgia'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
