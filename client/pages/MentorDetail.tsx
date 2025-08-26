@@ -113,6 +113,84 @@ const MentorDetail = () => {
         facebook: "https://facebook.com/phanhuynanh.official", 
         youtube: "https://youtube.com/@phanhuynanh"
       }
+    },
+    "nguyen-thi-mai": {
+      id: "nguyen-thi-mai",
+      name: "Nguyễn Thị Mai",
+      title: "Data Science Lead",
+      subtitle: "Senior Data Scientist | AI/ML Expert | Microsoft",
+      avatar: "/api/placeholder/300/300",
+      location: "Ha Noi",
+      experience: "6+ năm kinh nghiệm",
+      rating: 4.8,
+      students: 650,
+      personalInfo: {
+        fullName: "Nguyễn Thị Mai",
+        degree: "Thạc sĩ Khoa học Dữ liệu (2018)",
+        birthYear: "1990",
+        phone: "+84 901 234 568",
+        email: "nguyen.thi.mai@msc.edu.vn",
+        website: "www.nguyenthimai-ds.com"
+      },
+      positions: [
+        "Senior Data Scientist tại Microsoft",
+        "Giảng viên Data Science tại UEH",
+        "AI Consultant cho các startup",
+        "Founder DataVN Community",
+        "Research Associate tại AI Institute"
+      ],
+      degrees: [
+        "Thạc sĩ Khoa học Dữ liệu",
+        "Cử nhân Toán Ứng dụng",
+        "Certified Data Scientist (IBM)",
+        "AWS Machine Learning Specialist",
+        "Google AI Professional Certificate",
+        "Tableau Desktop Specialist"
+      ],
+      workHistory: [
+        {
+          period: "2018-2019",
+          role: "Junior Data Analyst",
+          company: "Vietcombank"
+        },
+        {
+          period: "2019-2021",
+          role: "Data Scientist",
+          company: "FPT Software"
+        },
+        {
+          period: "2021-2022",
+          role: "Senior Data Scientist",
+          company: "Shopee Vietnam"
+        },
+        {
+          period: "2022-nay",
+          role: "Data Science Lead",
+          company: "Microsoft Vietnam"
+        }
+      ],
+      skills: [
+        "Python & R Programming",
+        "Machine Learning",
+        "Deep Learning",
+        "Data Visualization",
+        "Statistical Analysis",
+        "SQL & NoSQL",
+        "Cloud Computing (AWS, Azure)",
+        "Business Intelligence"
+      ],
+      achievements: [
+        "Phát triển AI model tiết kiệm 30% chi phí",
+        "Published 15 research papers",
+        "Giải nhất Data Science Competition 2022",
+        "Mentor cho 500+ data scientists",
+        "Speaker tại 50+ tech conferences"
+      ],
+      socialLinks: {
+        linkedin: "https://linkedin.com/in/nguyenthimai",
+        facebook: "https://facebook.com/nguyenthimai.ds",
+        youtube: "https://youtube.com/@datascience-mai"
+      }
     }
   };
 
