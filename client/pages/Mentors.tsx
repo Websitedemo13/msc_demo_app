@@ -111,7 +111,7 @@ const Mentors = () => {
       students: 130,
       experience: "6+ năm kinh nghiệm",
       skills: ["Google Ads", "Facebook Ads", "SEO", "Content Marketing", "Analytics"],
-      bio: "Chuyên gia marketing số với kinh nghiệm quản lý các chiến dịch marketing cho thương hiệu l��n. Thành thạo về growth hacking và performance marketing.",
+      bio: "Chuyên gia marketing số với kinh nghiệm quản lý các chiến dịch marketing cho thương hiệu lớn. Thành thạo về growth hacking và performance marketing.",
       social: {
         linkedin: "#",
         twitter: "#"
@@ -250,7 +250,7 @@ const Mentors = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Link to={`/mentors/phan-huynh-anh`}>
+                  <Link to={`/mentors/${mentor.slug}`}>
                     <Button className="w-full msc-button-primary">
                       Xem hồ sơ chi tiết
                       <ExternalLink className="ml-2 w-4 h-4" />
