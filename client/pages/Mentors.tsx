@@ -28,6 +28,7 @@ const Mentors = () => {
     },
     {
       id: 2,
+      slug: "nguyen-thi-mai",
       name: "Nguyễn Thị Mai",
       title: "Data Science Lead",
       company: "Microsoft",
@@ -45,6 +46,7 @@ const Mentors = () => {
     },
     {
       id: 3,
+      slug: "tran-van-nam",
       name: "Trần Văn Nam",
       title: "DevOps Engineer",
       company: "Amazon",
@@ -63,6 +65,7 @@ const Mentors = () => {
     },
     {
       id: 4,
+      slug: "le-thi-huong",
       name: "Lê Thị Hương",
       title: "UX/UI Design Lead",
       company: "Meta",
@@ -80,6 +83,7 @@ const Mentors = () => {
     },
     {
       id: 5,
+      slug: "hoang-minh-tuan",
       name: "Hoàng Minh Tuấn",
       title: "Mobile App Developer",
       company: "Shopee",
@@ -97,6 +101,7 @@ const Mentors = () => {
     },
     {
       id: 6,
+      slug: "pham-thi-linh",
       name: "Phạm Thị Linh",
       title: "Digital Marketing Manager",
       company: "TikTok",
@@ -106,7 +111,7 @@ const Mentors = () => {
       students: 130,
       experience: "6+ năm kinh nghiệm",
       skills: ["Google Ads", "Facebook Ads", "SEO", "Content Marketing", "Analytics"],
-      bio: "Chuyên gia marketing số với kinh nghiệm quản lý các chiến dịch marketing cho thương hiệu lớn. Thành thạo về growth hacking và performance marketing.",
+      bio: "Chuyên gia marketing số với kinh nghiệm quản lý các chiến dịch marketing cho thương hiệu l��n. Thành thạo về growth hacking và performance marketing.",
       social: {
         linkedin: "#",
         twitter: "#"
