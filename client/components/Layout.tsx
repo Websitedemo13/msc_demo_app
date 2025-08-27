@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import MobileNavigation from "./MobileNavigation";
 import FloatingActionButtons from "./FloatingActionButtons";
+import MSCLogo from "./MSCLogo";
 import { motion } from "framer-motion";
 
 interface LayoutProps {
@@ -71,17 +72,11 @@ const Layout = ({
             {/* Mobile Footer */}
             <div className="lg:hidden">
               <div className="text-center mb-6">
-                <div className="flex items-center justify-center space-x-2 mb-4">
-                  <div className="w-10 h-10 bg-msc-primary rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">MSC</span>
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold">MSC CENTER</div>
-                    <div className="text-sm text-gray-400">UEH UNIVERSITY</div>
-                  </div>
+                <div className="flex items-center justify-center mb-4">
+                  <MSCLogo size="md" />
                 </div>
                 <p className="text-gray-400 text-sm max-w-sm mx-auto">
-                  Mekong Skill Center - Trung tâm phát triển kỹ năng và đ��o tạo chuyên nghiệp.
+                  Mekong Skill Center - Trung tâm phát triển kỹ năng và đào tạo chuyên nghiệp.
                 </p>
               </div>
 
@@ -121,14 +116,8 @@ const Layout = ({
             {/* Desktop Footer */}
             <div className="hidden lg:grid lg:grid-cols-3 gap-8">
               <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-10 h-10 bg-msc-primary rounded flex items-center justify-center">
-                    <span className="text-white font-bold">MSC</span>
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold">MSC CENTER</div>
-                    <div className="text-sm text-gray-400">UEH UNIVERSITY</div>
-                  </div>
+                <div className="mb-4">
+                  <MSCLogo size="md" />
                 </div>
                 <p className="text-gray-400 text-sm">
                   Mekong Skill Center - Trung tâm phát triển kỹ năng và đào tạo chuyên nghiệp.
