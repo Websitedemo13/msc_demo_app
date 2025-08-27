@@ -84,13 +84,9 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
       >
         <div className="flex items-center justify-between px-4 py-4">
           {/* Logo */}
-          <Link to="/">
-            <MSCLogo size="sm" showText={false} className="sm:space-x-2">
-              <div className="hidden sm:block">
-                <div className="text-lg font-bold text-gray-900">MSC CENTER</div>
-                <div className="text-xs text-gray-500">UEH UNIVERSITY</div>
-              </div>
-            </MSCLogo>
+          <Link to="/" className="flex items-center space-x-2">
+            <MSCLogo size="sm" showText={true} className="hidden sm:flex" />
+            <MSCLogo size="sm" variant="icon-only" className="sm:hidden" />
           </Link>
 
           {/* Center Search (Hidden on small screens) */}
