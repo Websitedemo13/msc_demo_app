@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import MSCLogo from "./MSCLogo";
 import {
   Menu,
   X,
@@ -83,21 +84,13 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
       >
         <div className="flex items-center justify-between px-4 py-4">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center space-x-2"
-          >
-            <motion.div
-              className="w-10 h-10 bg-msc-gradient rounded-lg flex items-center justify-center"
-              whileHover={{ rotate: 10 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <span className="text-white font-bold text-sm">MSC</span>
-            </motion.div>
-            <div className="hidden sm:block">
-              <div className="text-lg font-bold text-gray-900">MSC CENTER</div>
-              <div className="text-xs text-gray-500">UEH UNIVERSITY</div>
-            </div>
+          <Link to="/">
+            <MSCLogo size="sm" showText={false} className="sm:space-x-2">
+              <div className="hidden sm:block">
+                <div className="text-lg font-bold text-gray-900">MSC CENTER</div>
+                <div className="text-xs text-gray-500">UEH UNIVERSITY</div>
+              </div>
+            </MSCLogo>
           </Link>
 
           {/* Center Search (Hidden on small screens) */}
