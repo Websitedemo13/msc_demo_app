@@ -19,6 +19,8 @@ import {
   Award,
   Calendar,
   MapPin,
+  Share,
+  FolderOpen,
 } from "lucide-react";
 import { MobileButton } from "./MobileOptimizedCard";
 
