@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, User, Globe, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import MSCLogo from "./MSCLogo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
     { name: "DỰ ÁN", href: "/projects" },
     { name: "MENTORS", href: "/mentors" },
     { name: "MSCER", href: "/mscer" },
-    { name: "ĐỒNG HÀNH", href: "/partners" },
+    { name: "ĐỒNG HÀNH", href: "/dong-hanh" },
     { name: "CHIA SẺ", href: "/articles" },
     { name: "LIÊN HỆ", href: "/contact" },
   ];
@@ -73,18 +74,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="flex items-center space-x-2">
-              <div className="w-12 h-12 bg-msc-primary rounded flex items-center justify-center">
-                <span className="text-white font-bold text-lg">MSC</span>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-gray-900">
-                  MSC CENTER
-                </div>
-                <div className="text-xs text-gray-600">UEH UNIVERSITY</div>
-              </div>
-            </div>
+          <Link to="/">
+            <MSCLogo size="md" />
           </Link>
 
           {/* Desktop Navigation */}
