@@ -54,11 +54,11 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
     { path: "/", label: "Trang chủ", icon: Home },
     { path: "/about", label: "Giới thiệu", icon: User },
     { path: "/training", label: "Đào tạo", icon: BookOpen },
-    { path: "/projects", label: "Dự án", icon: BookOpen },
+    { path: "/projects", label: "Dự án", icon: FolderOpen },
     { path: "/mentors", label: "Mentors", icon: Users },
     { path: "/mscer", label: "MSCer", icon: Award },
     { path: "/dong-hanh", label: "Đồng hành", icon: Heart },
-    { path: "/articles", label: "Chia sẻ", icon: BookOpen },
+    { path: "/articles", label: "Chia sẻ", icon: Share },
     { path: "/contact", label: "Liên hệ", icon: MessageSquare },
   ];
 
