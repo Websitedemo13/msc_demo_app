@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import MobileOptimizedCard, {
+  MobileButton,
+} from "@/components/MobileOptimizedCard";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import {
   ArrowLeft,
   MapPin,
@@ -19,10 +24,35 @@ import {
   Youtube,
   Star,
   Clock,
+  MessageCircle,
+  Heart,
+  Share2,
+  BookOpen,
+  Users,
+  Target,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 const MentorDetail = () => {
   const { id } = useParams();
+  const [expandedSections, setExpandedSections] = useState<
+    Record<string, boolean>
+  >({
+    personal: true,
+    positions: true,
+    degrees: false,
+    workHistory: false,
+    skills: true,
+    achievements: false,
+  });
+
+  const toggleSection = (section: string) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   // Mock mentor data - trong thực tế sẽ fetch từ API
   const mentorData = {
@@ -36,6 +66,8 @@ const MentorDetail = () => {
       experience: "15+ năm kinh nghiệm",
       rating: 4.9,
       students: 1200,
+      courses: 8,
+      sessions: 150,
       personalInfo: {
         fullName: "Phan Huỳnh Anh",
         degree: "Tiến sĩ (2019)",
@@ -103,7 +135,7 @@ const MentorDetail = () => {
       ],
       achievements: [
         "Thành lập thành công 3 startup",
-        "Đào tạo hơn 10,000 sinh viên",
+        "Đào tạo h��n 10,000 sinh viên",
         "Nhận giải thưởng 'Educator of the Year 2023'",
         "Tác giả 5 cuốn sách về kinh doanh",
         "Speaker tại hơn 100 sự kiện",
@@ -114,84 +146,6 @@ const MentorDetail = () => {
         youtube: "https://youtube.com/@phanhuynanh",
       },
     },
-    "nguyen-thi-mai": {
-      id: "nguyen-thi-mai",
-      name: "Nguyễn Thị Mai",
-      title: "Data Science Lead",
-      subtitle: "Senior Data Scientist | AI/ML Expert | Microsoft",
-      avatar: "/api/placeholder/300/300",
-      location: "Ha Noi",
-      experience: "6+ năm kinh nghiệm",
-      rating: 4.8,
-      students: 650,
-      personalInfo: {
-        fullName: "Nguyễn Thị Mai",
-        degree: "Thạc sĩ Khoa học Dữ liệu (2018)",
-        birthYear: "1990",
-        phone: "+84 901 234 568",
-        email: "nguyen.thi.mai@msc.edu.vn",
-        website: "www.nguyenthimai-ds.com",
-      },
-      positions: [
-        "Senior Data Scientist tại Microsoft",
-        "Giảng viên Data Science tại UEH",
-        "AI Consultant cho các startup",
-        "Founder DataVN Community",
-        "Research Associate tại AI Institute",
-      ],
-      degrees: [
-        "Thạc sĩ Khoa học Dữ liệu",
-        "Cử nhân Toán Ứng dụng",
-        "Certified Data Scientist (IBM)",
-        "AWS Machine Learning Specialist",
-        "Google AI Professional Certificate",
-        "Tableau Desktop Specialist",
-      ],
-      workHistory: [
-        {
-          period: "2018-2019",
-          role: "Junior Data Analyst",
-          company: "Vietcombank",
-        },
-        {
-          period: "2019-2021",
-          role: "Data Scientist",
-          company: "FPT Software",
-        },
-        {
-          period: "2021-2022",
-          role: "Senior Data Scientist",
-          company: "Shopee Vietnam",
-        },
-        {
-          period: "2022-nay",
-          role: "Data Science Lead",
-          company: "Microsoft Vietnam",
-        },
-      ],
-      skills: [
-        "Python & R Programming",
-        "Machine Learning",
-        "Deep Learning",
-        "Data Visualization",
-        "Statistical Analysis",
-        "SQL & NoSQL",
-        "Cloud Computing (AWS, Azure)",
-        "Business Intelligence",
-      ],
-      achievements: [
-        "Phát triển AI model tiết kiệm 30% chi phí",
-        "Published 15 research papers",
-        "Giải nhất Data Science Competition 2022",
-        "Mentor cho 500+ data scientists",
-        "Speaker tại 50+ tech conferences",
-      ],
-      socialLinks: {
-        linkedin: "https://linkedin.com/in/nguyenthimai",
-        facebook: "https://facebook.com/nguyenthimai.ds",
-        youtube: "https://youtube.com/@datascience-mai",
-      },
-    },
   };
 
   const mentor = mentorData[id as keyof typeof mentorData];
@@ -199,15 +153,13 @@ const MentorDetail = () => {
   if (!mentor) {
     return (
       <Layout>
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center px-4">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 mb-4">
               Mentor không tìm thấy
             </h1>
             <Link to="/mentors">
-              <Button className="msc-button-primary">
-                Về danh sách Mentors
-              </Button>
+              <MobileButton>Về danh sách Mentors</MobileButton>
             </Link>
           </div>
         </div>
@@ -216,304 +168,540 @@ const MentorDetail = () => {
   }
 
   return (
-    <Layout>
-      {/* Mobile-optimized Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+    <Layout showMobileNav={false} showDesktopNav={false} showFooter={false}>
+      <div className="min-h-screen bg-gray-50">
+        {/* Mobile Header - Fixed */}
+        <motion.header
+          className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex items-center justify-between px-4 py-4">
             <Link
               to="/mentors"
               className="flex items-center text-msc-primary hover:text-msc-primary-dark transition-colors"
             >
-              <ArrowLeft className="w-5 h-5 mr-2" />
+              <ArrowLeft className="w-6 h-6 mr-2" />
               <span className="font-medium">Mentors</span>
             </Link>
-            <div className="flex items-center space-x-2">
-              <Star className="w-4 h-4 text-yellow-500 fill-current" />
-              <span className="text-sm font-semibold">{mentor.rating}</span>
+            <div className="flex items-center space-x-3">
+              <motion.button
+                className="p-2 rounded-full bg-red-50 text-red-500"
+                whileTap={{ scale: 0.9 }}
+              >
+                <Heart className="w-5 h-5" />
+              </motion.button>
+              <motion.button
+                className="p-2 rounded-full bg-gray-100 text-gray-600"
+                whileTap={{ scale: 0.9 }}
+              >
+                <Share2 className="w-5 h-5" />
+              </motion.button>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.header>
 
-      {/* Hero Profile Section */}
-      <section className="bg-gradient-to-br from-msc-blue-50 to-white py-8 md:py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+        {/* Main Content - Mobile Optimized */}
+        <main className="pt-20 pb-32">
+          {/* Hero Profile Section */}
+          <motion.section
+            className="bg-msc-gradient px-4 py-8 text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="text-center">
               {/* Avatar */}
-              <div className="relative">
-                <div className="w-32 h-32 md:w-40 md:h-40 bg-msc-gradient rounded-full flex items-center justify-center border-4 border-white shadow-xl">
-                  <span className="text-white font-bold text-3xl md:text-4xl">
-                    PA
-                  </span>
+              <motion.div
+                className="relative mx-auto mb-4"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+              >
+                <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center border-3 border-white/30 shadow-xl mx-auto">
+                  <span className="text-white font-bold text-2xl">PA</span>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
-              </div>
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-400 rounded-full border-2 border-white"></div>
+              </motion.div>
 
               {/* Info */}
-              <div className="flex-1 text-center md:text-left">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                <h1 className="text-2xl font-serif font-bold mb-1">
                   {mentor.name}
                 </h1>
-                <p className="text-lg md:text-xl text-msc-primary font-semibold mb-2">
+                <p className="text-white/90 text-sm font-medium mb-2">
                   {mentor.title}
                 </p>
-                <p className="text-gray-600 text-sm md:text-base mb-4 max-w-2xl">
+                <p className="text-white/80 text-xs mb-4 max-w-xs mx-auto">
                   {mentor.subtitle}
                 </p>
+              </motion.div>
 
-                {/* Quick Stats */}
-                <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm">
-                  <div className="flex items-center gap-1 text-gray-600">
-                    <MapPin className="w-4 h-4" />
-                    <span>{mentor.location}</span>
+              {/* Stats Row */}
+              <motion.div
+                className="flex justify-center space-x-6 mb-6"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-1">
+                    <Star className="w-4 h-4 text-yellow-300 fill-current mr-1" />
+                    <span className="text-lg font-bold">{mentor.rating}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-gray-600">
-                    <Clock className="w-4 h-4" />
-                    <span>{mentor.experience}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-gray-600">
-                    <GraduationCap className="w-4 h-4" />
-                    <span>{mentor.students} học viên</span>
-                  </div>
+                  <span className="text-xs text-white/80">Đánh giá</span>
                 </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold mb-1">
+                    {mentor.students}
+                  </div>
+                  <span className="text-xs text-white/80">Học viên</span>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold mb-1">
+                    {mentor.sessions}
+                  </div>
+                  <span className="text-xs text-white/80">Buổi học</span>
+                </div>
+              </motion.div>
 
-                {/* Social Links */}
-                <div className="flex justify-center md:justify-start gap-3 mt-4">
-                  <a
-                    href={mentor.socialLinks.linkedin}
-                    className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={mentor.socialLinks.facebook}
-                    className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-colors"
-                  >
-                    <Facebook className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={mentor.socialLinks.youtube}
-                    className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors"
-                  >
-                    <Youtube className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
+              {/* Social Links */}
+              <motion.div
+                className="flex justify-center space-x-3"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <motion.a
+                  href={mentor.socialLinks.linkedin}
+                  className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Linkedin className="w-5 h-5" />
+                </motion.a>
+                <motion.a
+                  href={mentor.socialLinks.facebook}
+                  className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Facebook className="w-5 h-5" />
+                </motion.a>
+                <motion.a
+                  href={mentor.socialLinks.youtube}
+                  className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Youtube className="w-5 h-5" />
+                </motion.a>
+              </motion.div>
             </div>
-          </div>
-        </div>
-      </section>
+          </motion.section>
 
-      {/* Main Content */}
-      <section className="py-8 md:py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Left Column - Personal Info */}
-              <div className="lg:col-span-1 space-y-6">
-                {/* Thông tin cá nhân */}
-                <Card className="shadow-sm border-0 bg-white">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center text-lg font-semibold">
-                      <GraduationCap className="w-5 h-5 mr-2 text-msc-primary" />
+          {/* Content Cards */}
+          <div className="px-4 py-6 space-y-4">
+            {/* Quick Actions */}
+            <motion.div
+              className="grid grid-cols-2 gap-3 mb-6"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <MobileButton variant="primary" size="lg">
+                <MessageCircle className="w-5 h-5" />
+                Nhắn tin
+              </MobileButton>
+              <MobileButton variant="secondary" size="lg">
+                <BookOpen className="w-5 h-5" />
+                Đăng ký học
+              </MobileButton>
+            </motion.div>
+
+            {/* Expandable Sections */}
+
+            {/* Personal Info */}
+            <MobileOptimizedCard>
+              <div className="p-4">
+                <motion.button
+                  className="w-full flex items-center justify-between"
+                  onClick={() => toggleSection("personal")}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-msc-blue-100 rounded-full flex items-center justify-center mr-3">
+                      <GraduationCap className="w-5 h-5 text-msc-primary" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
                       Thông tin cá nhân
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div>
-                      <p className="text-sm text-gray-600">Họ và tên</p>
-                      <p className="font-medium">
-                        {mentor.personalInfo.fullName}
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600">Học vị</p>
-                      <p className="font-medium">
-                        {mentor.personalInfo.degree}
-                      </p>
-                    </div>
-                    <Separator />
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm">
-                        <Phone className="w-4 h-4 mr-2 text-gray-400" />
-                        <span>{mentor.personalInfo.phone}</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <Mail className="w-4 h-4 mr-2 text-gray-400" />
-                        <span>{mentor.personalInfo.email}</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <Globe className="w-4 h-4 mr-2 text-gray-400" />
-                        <span>{mentor.personalInfo.website}</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </h3>
+                  </div>
+                  {expandedSections.personal ? (
+                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </motion.button>
 
-                {/* Kỹ năng */}
-                <Card className="shadow-sm border-0 bg-white">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center text-lg font-semibold">
-                      <Award className="w-5 h-5 mr-2 text-msc-primary" />
-                      Kỹ năng chuyên môn
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2">
-                      {mentor.skills.map((skill, index) => (
-                        <Badge
-                          key={index}
-                          variant="secondary"
-                          className="bg-msc-blue-50 text-msc-primary border-msc-blue-200"
-                        >
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Thành tích */}
-                <Card className="shadow-sm border-0 bg-white">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center text-lg font-semibold">
-                      <Star className="w-5 h-5 mr-2 text-msc-primary" />
-                      Thành tích nổi bật
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {mentor.achievements.map((achievement, index) => (
-                        <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-msc-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-700">
-                            {achievement}
+                <AnimatePresence>
+                  {expandedSections.personal && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 space-y-3">
+                        <div className="flex justify-between py-2">
+                          <span className="text-gray-600 text-sm">
+                            Họ và tên
                           </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Right Column - Professional Info */}
-              <div className="lg:col-span-2 space-y-6">
-                {/* Tổ chức làm việc */}
-                <Card className="shadow-sm border-0 bg-white">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center text-lg font-semibold">
-                      <Briefcase className="w-5 h-5 mr-2 text-msc-primary" />
-                      Tổ chức làm việc
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
-                      {mentor.positions.map((position, index) => (
-                        <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-gray-700">{position}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                {/* Bằng cấp và chuyên môn */}
-                <Card className="shadow-sm border-0 bg-white">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center text-lg font-semibold">
-                      <GraduationCap className="w-5 h-5 mr-2 text-msc-primary" />
-                      Bằng cấp và chuyên môn
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {mentor.degrees.map((degree, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center p-3 bg-gray-50 rounded-lg"
-                        >
-                          <GraduationCap className="w-4 h-4 mr-2 text-msc-primary flex-shrink-0" />
-                          <span className="text-sm font-medium text-gray-700">
-                            {degree}
+                          <span className="font-medium text-sm">
+                            {mentor.personalInfo.fullName}
                           </span>
                         </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Quá trình và đơn vị công tác */}
-                <Card className="shadow-sm border-0 bg-white">
-                  <CardHeader className="pb-4">
-                    <CardTitle className="flex items-center text-lg font-semibold">
-                      <Calendar className="w-5 h-5 mr-2 text-msc-primary" />
-                      Quá trình và đơn vị công tác
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {mentor.workHistory.map((work, index) => (
-                        <div
-                          key={index}
-                          className="relative pl-6 pb-4 border-l-2 border-msc-blue-200 last:border-l-0"
-                        >
-                          <div className="absolute w-3 h-3 bg-msc-primary rounded-full -left-2 top-1"></div>
-                          <div className="bg-white p-4 rounded-lg border border-gray-100">
-                            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                              <h4 className="font-semibold text-gray-900">
-                                {work.role}
-                              </h4>
-                              <Badge
-                                variant="outline"
-                                className="text-xs mt-1 md:mt-0 w-fit"
-                              >
-                                {work.period}
-                              </Badge>
-                            </div>
-                            <p className="text-msc-primary font-medium">
-                              {work.company}
-                            </p>
+                        <div className="flex justify-between py-2">
+                          <span className="text-gray-600 text-sm">Học vị</span>
+                          <span className="font-medium text-sm">
+                            {mentor.personalInfo.degree}
+                          </span>
+                        </div>
+                        <Separator />
+                        <div className="space-y-2 pt-2">
+                          <div className="flex items-center text-sm">
+                            <Phone className="w-4 h-4 mr-3 text-gray-400" />
+                            <span>{mentor.personalInfo.phone}</span>
+                          </div>
+                          <div className="flex items-center text-sm">
+                            <Mail className="w-4 h-4 mr-3 text-gray-400" />
+                            <span>{mentor.personalInfo.email}</span>
+                          </div>
+                          <div className="flex items-center text-sm">
+                            <Globe className="w-4 h-4 mr-3 text-gray-400" />
+                            <span>{mentor.personalInfo.website}</span>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </MobileOptimizedCard>
 
-      {/* CTA Section */}
-      <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-4">
-              Học tập cùng {mentor.name}
-            </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Đăng ký để nhận được sự hướng dẫn trực tiếp từ mentor với hơn{" "}
-              {mentor.experience.replace(/\D/g, "")} năm kinh nghiệm trong lĩnh
-              vực.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="msc-button-primary px-8 py-3">
-                Đăng ký mentoring 1-1
-              </Button>
-              <Button
-                variant="outline"
-                className="msc-button-secondary px-8 py-3"
-              >
-                Tham gia khóa học
-              </Button>
-            </div>
+            {/* Skills */}
+            <MobileOptimizedCard>
+              <div className="p-4">
+                <motion.button
+                  className="w-full flex items-center justify-between"
+                  onClick={() => toggleSection("skills")}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                      <Target className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Kỹ năng chuyên môn
+                    </h3>
+                  </div>
+                  {expandedSections.skills ? (
+                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </motion.button>
+
+                <AnimatePresence>
+                  {expandedSections.skills && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4">
+                        <div className="flex flex-wrap gap-2">
+                          {mentor.skills.map((skill, index) => (
+                            <motion.div
+                              key={index}
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ delay: index * 0.1 }}
+                            >
+                              <Badge
+                                variant="secondary"
+                                className="bg-msc-blue-50 text-msc-primary border-msc-blue-200 px-3 py-1"
+                              >
+                                {skill}
+                              </Badge>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </MobileOptimizedCard>
+
+            {/* Current Positions */}
+            <MobileOptimizedCard>
+              <div className="p-4">
+                <motion.button
+                  className="w-full flex items-center justify-between"
+                  onClick={() => toggleSection("positions")}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                      <Briefcase className="w-5 h-5 text-green-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Tổ chức làm việc
+                    </h3>
+                  </div>
+                  {expandedSections.positions ? (
+                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </motion.button>
+
+                <AnimatePresence>
+                  {expandedSections.positions && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 space-y-3">
+                        {mentor.positions.map((position, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex items-start p-3 bg-gray-50 rounded-lg"
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                          >
+                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-gray-700 text-sm">
+                              {position}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </MobileOptimizedCard>
+
+            {/* Degrees */}
+            <MobileOptimizedCard>
+              <div className="p-4">
+                <motion.button
+                  className="w-full flex items-center justify-between"
+                  onClick={() => toggleSection("degrees")}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                      <Award className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Bằng cấp chuyên môn
+                    </h3>
+                  </div>
+                  {expandedSections.degrees ? (
+                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </motion.button>
+
+                <AnimatePresence>
+                  {expandedSections.degrees && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 space-y-2">
+                        {mentor.degrees.map((degree, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex items-center p-3 bg-purple-50 rounded-lg"
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                          >
+                            <GraduationCap className="w-4 h-4 mr-3 text-purple-600 flex-shrink-0" />
+                            <span className="text-sm font-medium text-gray-700">
+                              {degree}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </MobileOptimizedCard>
+
+            {/* Work History */}
+            <MobileOptimizedCard>
+              <div className="p-4">
+                <motion.button
+                  className="w-full flex items-center justify-between"
+                  onClick={() => toggleSection("workHistory")}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                      <Calendar className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Quá trình công tác
+                    </h3>
+                  </div>
+                  {expandedSections.workHistory ? (
+                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </motion.button>
+
+                <AnimatePresence>
+                  {expandedSections.workHistory && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 space-y-4">
+                        {mentor.workHistory.map((work, index) => (
+                          <motion.div
+                            key={index}
+                            className="relative pl-6 pb-4 border-l-2 border-blue-200 last:border-l-0"
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                          >
+                            <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-2 top-1"></div>
+                            <div className="bg-white p-3 rounded-lg border border-gray-100">
+                              <div className="flex flex-col mb-2">
+                                <h4 className="font-semibold text-gray-900 text-sm">
+                                  {work.role}
+                                </h4>
+                                <p className="text-blue-600 font-medium text-sm">
+                                  {work.company}
+                                </p>
+                                <span className="text-xs text-gray-500 mt-1">
+                                  {work.period}
+                                </span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </MobileOptimizedCard>
+
+            {/* Achievements */}
+            <MobileOptimizedCard>
+              <div className="p-4">
+                <motion.button
+                  className="w-full flex items-center justify-between"
+                  onClick={() => toggleSection("achievements")}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                      <Star className="w-5 h-5 text-yellow-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      Thành tích nổi bật
+                    </h3>
+                  </div>
+                  {expandedSections.achievements ? (
+                    <ChevronUp className="w-5 h-5 text-gray-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </motion.button>
+
+                <AnimatePresence>
+                  {expandedSections.achievements && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 space-y-3">
+                        {mentor.achievements.map((achievement, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex items-start p-3 bg-yellow-50 rounded-lg"
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                          >
+                            <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <span className="text-sm text-gray-700">
+                              {achievement}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </MobileOptimizedCard>
           </div>
-        </div>
-      </section>
+        </main>
+
+        {/* Fixed Bottom Action Bar */}
+        <motion.div
+          className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-4 z-40"
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.8 }}
+        >
+          <div className="flex space-x-3">
+            <MobileButton variant="primary" fullWidth size="lg">
+              <MessageCircle className="w-5 h-5" />
+              Đăng ký Mentoring 1-1
+            </MobileButton>
+            <MobileButton variant="secondary" size="lg">
+              <BookOpen className="w-5 h-5" />
+              Khóa học
+            </MobileButton>
+          </div>
+          <div className="text-center mt-2">
+            <p className="text-xs text-gray-500">
+              Học tập cùng mentor với hơn {mentor.experience.replace(/\D/g, "")}{" "}
+              năm kinh nghiệm
+            </p>
+          </div>
+        </motion.div>
+      </div>
     </Layout>
   );
 };

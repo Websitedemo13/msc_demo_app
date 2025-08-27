@@ -14,6 +14,8 @@ import Projects from "./pages/Projects";
 import Mentors from "./pages/Mentors";
 import MentorDetail from "./pages/MentorDetail";
 import MSCer from "./pages/MSCer";
+import MSCerDetail from "./pages/MSCerDetail";
+import DongHanh from "./pages/DongHanh";
 import Partners from "./pages/Partners";
 import Articles from "./pages/Articles";
 import Contact from "./pages/Contact";
@@ -36,6 +38,8 @@ const App = () => (
           <Route path="/mentors" element={<Mentors />} />
           <Route path="/mentors/:id" element={<MentorDetail />} />
           <Route path="/mscer" element={<MSCer />} />
+          <Route path="/mscer/:id" element={<MSCerDetail />} />
+          <Route path="/dong-hanh" element={<DongHanh />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/contact" element={<Contact />} />
