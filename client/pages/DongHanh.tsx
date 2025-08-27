@@ -1,7 +1,9 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import MobileOptimizedCard, { MobileButton } from "@/components/MobileOptimizedCard";
-import { 
+import MobileOptimizedCard, {
+  MobileButton,
+} from "@/components/MobileOptimizedCard";
+import {
   Handshake,
   Building,
   Users,
@@ -31,15 +33,15 @@ const DongHanh = () => {
       color: "blue",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
-      description: "Các trường đại học và tổ chức giáo dục uy tín"
+      description: "Các trường đại học và tổ chức giáo dục uy tín",
     },
     {
-      title: "Đối tác Doanh nghiệp", 
+      title: "Đối tác Doanh nghiệp",
       icon: Building,
       color: "green",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
-      description: "Các công ty và tập đoàn hàng đầu"
+      description: "Các công ty và tập đoàn hàng đầu",
     },
     {
       title: "Đối tác Công nghệ",
@@ -47,7 +49,7 @@ const DongHanh = () => {
       color: "purple",
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
-      description: "Các nhà cung cấp công nghệ và giải pháp số"
+      description: "Các nhà cung cấp công nghệ và giải pháp số",
     },
     {
       title: "Đối tác Quốc tế",
@@ -55,8 +57,8 @@ const DongHanh = () => {
       color: "orange",
       bgColor: "bg-orange-50",
       borderColor: "border-orange-200",
-      description: "Các tổ chức và đối tác từ nhiều quốc gia"
-    }
+      description: "Các tổ chức và đối tác từ nhiều quốc gia",
+    },
   ];
 
   // Featured partners
@@ -65,51 +67,60 @@ const DongHanh = () => {
       name: "Đại học Kinh tế TP.HCM (UEH)",
       type: "Giáo dục",
       logo: "/api/placeholder/100/60",
-      description: "Đối tác chiến lược trong phát triển chương trình đào tạo chất lượng cao",
+      description:
+        "Đối tác chiến lược trong phát triển chương trình đào tạo chất lượng cao",
       partnership: "Đối tác chiến lược",
       since: "2020",
       website: "https://ueh.edu.vn",
-      benefits: ["Chương trình đào tạo chuyên sâu", "Chứng chỉ uy tín", "Cơ hội việc làm"]
+      benefits: [
+        "Chương trình đào tạo chuyên sâu",
+        "Chứng chỉ uy tín",
+        "Cơ hội việc làm",
+      ],
     },
     {
       name: "VinGroup",
       type: "Doanh nghiệp",
       logo: "/api/placeholder/100/60",
-      description: "Hợp tác trong đào tạo nhân lực và phát triển dự án công nghệ",
+      description:
+        "Hợp tác trong đào tạo nhân lực và phát triển dự án công nghệ",
       partnership: "Đối tác tuyển dụng",
       since: "2021",
       website: "https://vingroup.net",
-      benefits: ["Cơ hội thực tập", "Tuyển dụng ưu tiên", "Dự án thực tế"]
+      benefits: ["Cơ hội thực tập", "Tuyển dụng ưu tiên", "Dự án thực tế"],
     },
     {
       name: "FPT Corporation",
       type: "Công nghệ",
       logo: "/api/placeholder/100/60",
-      description: "Đồng hành trong chương trình đào tạo công nghệ và chuyển đổi số",
+      description:
+        "Đồng hành trong chương trình đào tạo công nghệ và chuyển đổi số",
       partnership: "Đối tác công nghệ",
       since: "2019",
       website: "https://fpt.com.vn",
-      benefits: ["Công nghệ tiên tiến", "Đào tạo kỹ thuật", "Mentorship"]
+      benefits: ["Công nghệ tiên tiến", "Đào tạo kỹ thuật", "Mentorship"],
     },
     {
       name: "Microsoft Vietnam",
       type: "Công nghệ",
       logo: "/api/placeholder/100/60",
-      description: "Cung cấp nền tảng và công cụ học tập hiện đại cho sinh viên",
+      description:
+        "Cung cấp nền tảng và công cụ học tập hiện đại cho sinh viên",
       partnership: "Đối tác công nghệ",
       since: "2022",
       website: "https://microsoft.com/vi-vn",
-      benefits: ["Gi��y phép phần mềm", "Đào tạo chứng chỉ", "Cloud platform"]
+      benefits: ["Gi��y phép phần mềm", "Đào tạo chứng chỉ", "Cloud platform"],
     },
     {
       name: "Samsung Vietnam",
       type: "Doanh nghiệp",
       logo: "/api/placeholder/100/60",
-      description: "Hợp tác nghiên cứu và phát triển các giải pháp công nghệ sáng tạo",
+      description:
+        "Hợp tác nghiên cứu và phát triển các giải pháp công nghệ sáng tạo",
       partnership: "Đối tác R&D",
       since: "2021",
       website: "https://samsung.com/vn",
-      benefits: ["Nghiên cứu ứng dụng", "Học bổng", "Trang thiết bị"]
+      benefits: ["Nghiên cứu ứng dụng", "Học bổng", "Trang thiết bị"],
     },
     {
       name: "Shopee Vietnam",
@@ -119,8 +130,8 @@ const DongHanh = () => {
       partnership: "Đối tác đào tạo",
       since: "2023",
       website: "https://shopee.vn",
-      benefits: ["Thực tập có lương", "Dự án e-commerce", "Kỹ năng marketing"]
-    }
+      benefits: ["Thực tập có lương", "Dự án e-commerce", "Kỹ năng marketing"],
+    },
   ];
 
   // Partnership benefits
@@ -129,40 +140,45 @@ const DongHanh = () => {
       title: "Mở rộng cơ hội việc làm",
       description: "Kết nối trực tiếp với các nhà tuyển dụng uy tín",
       icon: Briefcase,
-      color: "blue"
+      color: "blue",
     },
     {
       title: "Chương trình đào tạo chất lượng",
       description: "Nội dung cập nhật theo xu hướng thị trường",
       icon: GraduationCap,
-      color: "green"
+      color: "green",
     },
     {
       title: "Công nghệ tiên tiến",
       description: "Tiếp cận các công cụ và nền tảng hàng đầu",
       icon: Target,
-      color: "purple"
+      color: "purple",
     },
     {
       title: "Mạng lưới đối tác toàn cầu",
       description: "Cơ hội hợp tác và phát triển quốc tế",
       icon: Globe,
-      color: "orange"
-    }
+      color: "orange",
+    },
   ];
 
   // Statistics
   const stats = [
     { label: "Đối tác", value: "50+", icon: Handshake, color: "blue" },
     { label: "Quốc gia", value: "15+", icon: Globe, color: "green" },
-    { label: "Học viên được tuyển dụng", value: "2000+", icon: Users, color: "orange" },
+    {
+      label: "Học viên được tuyển dụng",
+      value: "2000+",
+      icon: Users,
+      color: "orange",
+    },
     { label: "Dự án hợp tác", value: "100+", icon: Award, color: "purple" },
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="bg-msc-gradient py-12 md:py-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -177,8 +193,8 @@ const DongHanh = () => {
           >
             <Handshake className="w-10 h-10" />
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-4"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -186,18 +202,20 @@ const DongHanh = () => {
           >
             Đối tác & Đồng hành
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Sức mạnh của MSC Center được tạo nên từ mạng lưới đối tác uy tín, cùng chung một tầm nhìn về phát triển giáo dục và nguồn nhân lực chất lượng cao.
+            Sức mạnh của MSC Center được tạo nên từ mạng lưới đối tác uy tín,
+            cùng chung một tầm nhìn về phát triển giáo dục và nguồn nhân lực
+            chất lượng cao.
           </motion.p>
 
           {/* Stats Grid */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -211,12 +229,20 @@ const DongHanh = () => {
                   className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.1, type: "spring", stiffness: 200 }}
+                  transition={{
+                    delay: 0.6 + index * 0.1,
+                    type: "spring",
+                    stiffness: 200,
+                  }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <Icon className="w-8 h-8 mx-auto mb-2 text-white/80" />
-                  <div className="text-2xl md:text-3xl font-bold mb-1">{stat.value}</div>
-                  <div className="text-xs md:text-sm text-white/80">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs md:text-sm text-white/80">
+                    {stat.label}
+                  </div>
                 </motion.div>
               );
             })}
@@ -227,7 +253,7 @@ const DongHanh = () => {
       {/* Partner Categories */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -237,7 +263,8 @@ const DongHanh = () => {
               Các loại hình đối tác
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              MSC Center hợp tác với đa dạng các tổ chức để mang lại giá trị tốt nhất cho học viên
+              MSC Center hợp tác với đa dạng các tổ chức để mang lại giá trị tốt
+              nhất cho học viên
             </p>
           </motion.div>
 
@@ -252,14 +279,24 @@ const DongHanh = () => {
                   transition={{ delay: 0.3 + index * 0.1 }}
                 >
                   <MobileOptimizedCard>
-                    <div className={`p-6 ${category.bgColor} border-l-4 ${category.borderColor}`}>
+                    <div
+                      className={`p-6 ${category.bgColor} border-l-4 ${category.borderColor}`}
+                    >
                       <div className="flex items-start">
-                        <div className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center mr-4 shadow-sm`}>
-                          <Icon className={`w-6 h-6 text-${category.color}-600`} />
+                        <div
+                          className={`w-12 h-12 bg-white rounded-xl flex items-center justify-center mr-4 shadow-sm`}
+                        >
+                          <Icon
+                            className={`w-6 h-6 text-${category.color}-600`}
+                          />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">{category.title}</h3>
-                          <p className="text-gray-600 text-sm">{category.description}</p>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">
+                            {category.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm">
+                            {category.description}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -274,7 +311,7 @@ const DongHanh = () => {
       {/* Featured Partners */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -316,12 +353,18 @@ const DongHanh = () => {
                     {/* Partnership Info */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-gray-600">Loại hợp tác:</span>
-                        <span className="text-sm font-medium text-gray-900">{partner.partnership}</span>
+                        <span className="text-sm text-gray-600">
+                          Loại hợp tác:
+                        </span>
+                        <span className="text-sm font-medium text-gray-900">
+                          {partner.partnership}
+                        </span>
                       </div>
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-sm text-gray-600">Từ năm:</span>
-                        <span className="text-sm font-medium text-gray-900">{partner.since}</span>
+                        <span className="text-sm font-medium text-gray-900">
+                          {partner.since}
+                        </span>
                       </div>
                     </div>
 
@@ -332,7 +375,9 @@ const DongHanh = () => {
 
                     {/* Benefits */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 mb-2">Lợi ích hợp tác:</h4>
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                        Lợi ích hợp tác:
+                      </h4>
                       <div className="space-y-1">
                         {partner.benefits.map((benefit, idx) => (
                           <div key={idx} className="flex items-center text-sm">
@@ -344,7 +389,11 @@ const DongHanh = () => {
                     </div>
 
                     {/* Action */}
-                    <a href={partner.website} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <MobileButton variant="secondary" fullWidth size="sm">
                         Tìm hiểu thêm
                         <ExternalLink className="w-4 h-4" />
@@ -361,7 +410,7 @@ const DongHanh = () => {
       {/* Partnership Benefits */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center mb-12"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -371,7 +420,8 @@ const DongHanh = () => {
               Lợi ích từ đối tác
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Học viên MSC Center được hưởng những lợi ích thiết thực từ mạng lưới đối tác
+              Học viên MSC Center được hưởng những lợi ích thiết thực từ mạng
+              lưới đối tác
             </p>
           </motion.div>
 
@@ -388,11 +438,17 @@ const DongHanh = () => {
                   <MobileOptimizedCard>
                     <div className="p-6">
                       <div className="flex items-start">
-                        <div className={`w-12 h-12 bg-${benefit.color}-100 rounded-xl flex items-center justify-center mr-4`}>
-                          <Icon className={`w-6 h-6 text-${benefit.color}-600`} />
+                        <div
+                          className={`w-12 h-12 bg-${benefit.color}-100 rounded-xl flex items-center justify-center mr-4`}
+                        >
+                          <Icon
+                            className={`w-6 h-6 text-${benefit.color}-600`}
+                          />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">
+                            {benefit.title}
+                          </h3>
                           <p className="text-gray-600">{benefit.description}</p>
                         </div>
                       </div>
@@ -406,7 +462,7 @@ const DongHanh = () => {
       </section>
 
       {/* Partnership CTA */}
-      <motion.section 
+      <motion.section
         className="bg-gray-900 py-12 md:py-16 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -422,7 +478,8 @@ const DongHanh = () => {
               Trở thành đối tác của MSC Center
             </h2>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Hãy cùng chúng tôi xây dựng hệ sinh thái giáo dục và phát triển nguồn nhân lực chất lượng cao
+              Hãy cùng chúng tôi xây dựng hệ sinh thái giáo dục và phát triển
+              nguồn nhân lực chất lượng cao
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MobileButton variant="primary" size="lg">

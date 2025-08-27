@@ -7,11 +7,11 @@ interface MSCLogoProps {
   variant?: "full" | "icon-only" | "text-only";
 }
 
-const MSCLogo = ({ 
-  size = "md", 
-  showText = true, 
+const MSCLogo = ({
+  size = "md",
+  showText = true,
   className = "",
-  variant = "full" 
+  variant = "full",
 }: MSCLogoProps) => {
   const sizes = {
     sm: {
@@ -51,8 +51,15 @@ const MSCLogo = ({
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Outer Circle */}
-      <circle cx="60" cy="60" r="58" fill="#1f3a93" stroke="#ffffff" strokeWidth="2" />
-      
+      <circle
+        cx="60"
+        cy="60"
+        r="58"
+        fill="#1f3a93"
+        stroke="#ffffff"
+        strokeWidth="2"
+      />
+
       {/* Inner MSC Design */}
       <g transform="translate(60, 60)">
         {/* M */}
@@ -61,14 +68,14 @@ const MSCLogo = ({
           fill="white"
           strokeWidth="1"
         />
-        
+
         {/* S */}
         <path
           d="M5 -20 L5 -15 L20 -15 L20 -5 L5 -5 L5 5 L35 5 L35 0 L10 0 L10 -10 L35 -10 L35 -20 Z"
           fill="white"
           strokeWidth="1"
         />
-        
+
         {/* C */}
         <path
           d="M5 10 L5 30 L35 30 L35 25 L10 25 L10 15 L35 15 L35 10 Z"
@@ -76,7 +83,7 @@ const MSCLogo = ({
           strokeWidth="1"
         />
       </g>
-      
+
       {/* UEH Pattern Elements */}
       <circle cx="60" cy="30" r="3" fill="#ffffff" opacity="0.8" />
       <circle cx="30" cy="60" r="2" fill="#ffffff" opacity="0.6" />
@@ -97,7 +104,7 @@ const MSCLogo = ({
 
   const LogoText = () => (
     <div className="flex flex-col">
-      <motion.div 
+      <motion.div
         className={`${currentSize.mainText} text-gray-900 leading-tight`}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -105,7 +112,7 @@ const MSCLogo = ({
       >
         MSC CENTER
       </motion.div>
-      <motion.div 
+      <motion.div
         className={`${currentSize.subText} text-gray-500 leading-tight`}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -125,7 +132,7 @@ const MSCLogo = ({
   }
 
   return (
-    <motion.div 
+    <motion.div
       className={`${currentSize.container} ${className}`}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -139,7 +146,9 @@ const MSCLogo = ({
 
 // Simplified logo for favicons and small spaces
 export const MSCLogoSimple = ({ className = "" }: { className?: string }) => (
-  <div className={`w-10 h-10 bg-msc-gradient rounded-lg flex items-center justify-center text-white font-bold text-sm ${className}`}>
+  <div
+    className={`w-10 h-10 bg-msc-gradient rounded-lg flex items-center justify-center text-white font-bold text-sm ${className}`}
+  >
     MSC
   </div>
 );
@@ -154,14 +163,14 @@ export const MSCLogoAnimated = ({ className = "" }: { className?: string }) => (
   >
     <motion.div
       className="w-12 h-12 bg-msc-gradient rounded-lg flex items-center justify-center text-white font-bold"
-      animate={{ 
+      animate={{
         rotate: [0, 360],
-        scale: [1, 1.1, 1]
+        scale: [1, 1.1, 1],
       }}
-      transition={{ 
+      transition={{
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut",
       }}
     >
       MSC

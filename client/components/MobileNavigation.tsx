@@ -66,7 +66,11 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
     { label: "Thông báo", icon: Bell, badge: 3, onClick: () => {} },
     { label: "Yêu thích", icon: Heart, onClick: () => navigate("/favorites") },
     { label: "Lịch học", icon: Calendar, onClick: () => navigate("/schedule") },
-    { label: "Thành tích", icon: Award, onClick: () => navigate("/achievements") },
+    {
+      label: "Thành tích",
+      icon: Award,
+      onClick: () => navigate("/achievements"),
+    },
   ];
 
   const isCurrentPath = (path: string) => {
@@ -79,10 +83,13 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
       <motion.header
         className={`
           fixed top-0 left-0 right-0 z-50 transition-all duration-300
-          ${showBackground ? (isScrolled 
-            ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm" 
-            : "bg-transparent") 
-          : "bg-white/95 backdrop-blur-md border-b border-gray-200"}
+          ${
+            showBackground
+              ? isScrolled
+                ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm"
+                : "bg-transparent"
+              : "bg-white/95 backdrop-blur-md border-b border-gray-200"
+          }
         `}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -203,7 +210,7 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
                     <X className="w-5 h-5" />
                   </motion.button>
                 </div>
-                
+
                 {/* User Profile Section */}
                 <motion.div
                   className="flex items-center space-x-3"
@@ -228,11 +235,11 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
                     Điều hướng
                   </h3>
                 </div>
-                
+
                 {navigationItems.map((item, index) => {
                   const Icon = item.icon;
                   const isCurrent = isCurrentPath(item.path);
-                  
+
                   return (
                     <motion.div
                       key={item.path}
@@ -244,20 +251,27 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
                         to={item.path}
                         className={`
                           flex items-center px-6 py-3 transition-colors relative overflow-hidden
-                          ${isCurrent 
-                            ? "bg-msc-blue-50 text-msc-primary border-r-4 border-msc-primary" 
-                            : "text-gray-700 hover:bg-gray-50"
+                          ${
+                            isCurrent
+                              ? "bg-msc-blue-50 text-msc-primary border-r-4 border-msc-primary"
+                              : "text-gray-700 hover:bg-gray-50"
                           }
                         `}
                       >
-                        <Icon className={`w-5 h-5 mr-3 ${isCurrent ? "text-msc-primary" : "text-gray-400"}`} />
+                        <Icon
+                          className={`w-5 h-5 mr-3 ${isCurrent ? "text-msc-primary" : "text-gray-400"}`}
+                        />
                         <span className="font-medium">{item.label}</span>
-                        
+
                         {isCurrent && (
                           <motion.div
                             className="absolute inset-0 bg-msc-primary/5"
                             layoutId="activeMenuItem"
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 30,
+                            }}
                           />
                         )}
                       </Link>
@@ -273,11 +287,11 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
                     Thao tác nhanh
                   </h3>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-3 px-6">
                   {quickActions.map((action, index) => {
                     const Icon = action.icon;
-                    
+
                     return (
                       <motion.button
                         key={index}
@@ -285,13 +299,19 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
                         className="relative flex flex-col items-center p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
+                        transition={{
+                          delay: 0.3 + index * 0.1,
+                          type: "spring",
+                          stiffness: 200,
+                        }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <Icon className="w-6 h-6 text-gray-600 mb-2" />
-                        <span className="text-xs font-medium text-gray-700">{action.label}</span>
-                        
+                        <span className="text-xs font-medium text-gray-700">
+                          {action.label}
+                        </span>
+
                         {action.badge && (
                           <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
                             {action.badge}
@@ -315,7 +335,7 @@ const MobileNavigation = ({ showBackground = true }: MobileNavigationProps) => {
                   <Settings className="w-5 h-5 mr-3 text-gray-400" />
                   <span className="font-medium">Cài đặt</span>
                 </motion.button>
-                
+
                 <motion.button
                   className="flex items-center w-full px-6 py-3 text-red-600 hover:bg-red-50 transition-colors"
                   initial={{ x: 50, opacity: 0 }}

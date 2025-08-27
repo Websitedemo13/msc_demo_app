@@ -15,8 +15,8 @@ interface LayoutProps {
   showFooter?: boolean;
 }
 
-const Layout = ({ 
-  children, 
+const Layout = ({
+  children,
   className = "",
   showMobileNav = true,
   showDesktopNav = true,
@@ -24,9 +24,9 @@ const Layout = ({
   showFooter = true,
 }: LayoutProps) => {
   const location = useLocation();
-  
+
   // Determine if we should show background on mobile nav based on route
-  const showMobileNavBackground = !location.pathname.includes('/mentors/');
+  const showMobileNavBackground = !location.pathname.includes("/mentors/");
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -36,7 +36,7 @@ const Layout = ({
           <Header />
         </div>
       )}
-      
+
       {/* Mobile Navigation - Visible on mobile/tablet */}
       {showMobileNav && (
         <div className="lg:hidden">
@@ -45,7 +45,7 @@ const Layout = ({
       )}
 
       {/* Main Content */}
-      <motion.main 
+      <motion.main
         className={`
           ${showMobileNav || showDesktopNav ? "pt-16 lg:pt-20" : ""} 
           ${className}
@@ -62,7 +62,7 @@ const Layout = ({
 
       {/* Footer */}
       {showFooter && (
-        <motion.footer 
+        <motion.footer
           className="bg-gray-900 text-white py-8 lg:py-12 mt-12 lg:mt-20"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,7 +76,8 @@ const Layout = ({
                   <MSCLogo size="md" />
                 </div>
                 <p className="text-gray-400 text-sm max-w-sm mx-auto">
-                  Mekong Skill Center - Trung tâm phát triển kỹ năng và đào tạo chuyên nghiệp.
+                  Mekong Skill Center - Trung tâm phát triển kỹ năng và đào tạo
+                  chuyên nghiệp.
                 </p>
               </div>
 
@@ -85,17 +86,26 @@ const Layout = ({
                   <h3 className="text-lg font-semibold mb-3">Liên kết</h3>
                   <ul className="space-y-2 text-sm">
                     <li>
-                      <a href="/about" className="text-gray-400 hover:text-white transition-colors">
+                      <a
+                        href="/about"
+                        className="text-gray-400 hover:text-white transition-colors"
+                      >
                         Giới thiệu
                       </a>
                     </li>
                     <li>
-                      <a href="/training" className="text-gray-400 hover:text-white transition-colors">
+                      <a
+                        href="/training"
+                        className="text-gray-400 hover:text-white transition-colors"
+                      >
                         Đào tạo
                       </a>
                     </li>
                     <li>
-                      <a href="/mentors" className="text-gray-400 hover:text-white transition-colors">
+                      <a
+                        href="/mentors"
+                        className="text-gray-400 hover:text-white transition-colors"
+                      >
                         Mentors
                       </a>
                     </li>
@@ -120,7 +130,8 @@ const Layout = ({
                   <MSCLogo size="md" />
                 </div>
                 <p className="text-gray-400 text-sm">
-                  Mekong Skill Center - Trung tâm phát triển kỹ năng và đào tạo chuyên nghiệp.
+                  Mekong Skill Center - Trung tâm phát triển kỹ năng và đào tạo
+                  chuyên nghiệp.
                 </p>
               </div>
 
@@ -128,22 +139,34 @@ const Layout = ({
                 <h3 className="text-lg font-semibold mb-4">Liên kết nhanh</h3>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="/about" className="text-gray-400 hover:text-white transition-colors">
+                    <a
+                      href="/about"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       Giới thiệu
                     </a>
                   </li>
                   <li>
-                    <a href="/training" className="text-gray-400 hover:text-white transition-colors">
+                    <a
+                      href="/training"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       Đào tạo
                     </a>
                   </li>
                   <li>
-                    <a href="/mentors" className="text-gray-400 hover:text-white transition-colors">
+                    <a
+                      href="/mentors"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       Mentors
                     </a>
                   </li>
                   <li>
-                    <a href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                    <a
+                      href="/contact"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
                       Liên hệ
                     </a>
                   </li>
@@ -151,7 +174,9 @@ const Layout = ({
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Thông tin liên hệ</h3>
+                <h3 className="text-lg font-semibold mb-4">
+                  Thông tin liên hệ
+                </h3>
                 <div className="space-y-2 text-sm text-gray-400">
                   <p>📧 msc.edu.vn@gmail.com</p>
                   <p>📞 (+84) 329 381 489</p>
@@ -160,7 +185,7 @@ const Layout = ({
               </div>
             </div>
 
-            <motion.div 
+            <motion.div
               className="border-t border-gray-800 mt-6 lg:mt-8 pt-6 lg:pt-8 text-center text-sm text-gray-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

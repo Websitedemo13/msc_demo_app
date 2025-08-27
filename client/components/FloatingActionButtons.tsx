@@ -77,7 +77,9 @@ const FloatingActionButtons = () => {
 
   const quickSearch = () => {
     // Focus on search input or open search modal
-    const searchInput = document.querySelector('input[type="text"]') as HTMLInputElement;
+    const searchInput = document.querySelector(
+      'input[type="text"]',
+    ) as HTMLInputElement;
     if (searchInput) {
       searchInput.focus();
     }
@@ -106,16 +108,20 @@ const FloatingActionButtons = () => {
   // Context-aware action buttons based on current route
   const getContextualActions = () => {
     const currentPath = location.pathname;
-    
+
     const baseActions = [
-      ...(showScrollTop ? [{
-        id: "scroll-top",
-        icon: ArrowUp,
-        action: scrollToTop,
-        bgColor: "bg-msc-primary",
-        label: "Lên đầu trang",
-        priority: 1,
-      }] : []),
+      ...(showScrollTop
+        ? [
+            {
+              id: "scroll-top",
+              icon: ArrowUp,
+              action: scrollToTop,
+              bgColor: "bg-msc-primary",
+              label: "Lên đầu trang",
+              priority: 1,
+            },
+          ]
+        : []),
       {
         id: "chat",
         icon: MessageSquareText,
@@ -143,7 +149,7 @@ const FloatingActionButtons = () => {
     ];
 
     // Add context-specific actions
-    if (currentPath.includes('/mentors')) {
+    if (currentPath.includes("/mentors")) {
       baseActions.splice(2, 0, {
         id: "schedule",
         icon: Calendar,
@@ -154,7 +160,7 @@ const FloatingActionButtons = () => {
       });
     }
 
-    if (currentPath.includes('/mentors/')) {
+    if (currentPath.includes("/mentors/")) {
       baseActions.splice(1, 0, {
         id: "share",
         icon: Share2,
@@ -165,11 +171,14 @@ const FloatingActionButtons = () => {
       });
     }
 
-    if (currentPath !== '/') {
+    if (currentPath !== "/") {
       baseActions.push({
         id: "home",
         icon: Home,
-        action: () => { navigate('/'); setIsOpen(false); },
+        action: () => {
+          navigate("/");
+          setIsOpen(false);
+        },
         bgColor: "bg-gray-600",
         label: "Trang chủ",
         priority: 10,
@@ -189,7 +198,10 @@ const FloatingActionButtons = () => {
       {
         id: "facebook",
         icon: Facebook,
-        action: () => { window.open("https://facebook.com/msc.center", "_blank"); setIsOpen(false); },
+        action: () => {
+          window.open("https://facebook.com/msc.center", "_blank");
+          setIsOpen(false);
+        },
         bgColor: "bg-blue-600",
         label: "Facebook",
         priority: 7,
@@ -197,11 +209,14 @@ const FloatingActionButtons = () => {
       {
         id: "youtube",
         icon: Youtube,
-        action: () => { window.open("https://youtube.com/@mscenter", "_blank"); setIsOpen(false); },
+        action: () => {
+          window.open("https://youtube.com/@mscenter", "_blank");
+          setIsOpen(false);
+        },
         bgColor: "bg-red-600",
         label: "YouTube",
         priority: 8,
-      }
+      },
     );
 
     return baseActions.sort((a, b) => a.priority - b.priority).slice(0, 6); // Limit to 6 actions
@@ -222,7 +237,7 @@ const FloatingActionButtons = () => {
       const radius = 80;
       const x = -Math.cos((angle * Math.PI) / 180) * radius;
       const y = -Math.sin((angle * Math.PI) / 180) * radius;
-      
+
       return {
         opacity: 1,
         scale: 1,
@@ -250,11 +265,11 @@ const FloatingActionButtons = () => {
 
   // Primary button animations
   const primaryButtonVariants = {
-    closed: { 
+    closed: {
       rotate: 0,
       scale: 1,
     },
-    open: { 
+    open: {
       rotate: 45,
       scale: 1.1,
     },
@@ -325,7 +340,7 @@ const FloatingActionButtons = () => {
                       >
                         <button.icon className="w-5 h-5 lg:w-6 lg:h-6" />
                       </Button>
-                      
+
                       {/* Desktop tooltip */}
                       <div className="hidden lg:block absolute bottom-full right-1/2 transform translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
                         <div className="bg-black/80 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
@@ -373,7 +388,7 @@ const FloatingActionButtons = () => {
                 whileTap={{ scale: 2, opacity: 0.2 }}
                 transition={{ duration: 0.4 }}
               />
-              
+
               {/* Icon with rotation animation */}
               <motion.div
                 variants={primaryButtonVariants}
@@ -426,7 +441,7 @@ const FloatingActionButtons = () => {
       </div>
 
       {/* Quick Access Bottom Bar (Mobile only - when not on main page) */}
-      {location.pathname !== '/' && (
+      {location.pathname !== "/" && (
         <motion.div
           className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 px-4 py-2 z-40 lg:hidden"
           initial={{ y: 100 }}
@@ -435,25 +450,25 @@ const FloatingActionButtons = () => {
         >
           <div className="flex justify-center space-x-6">
             <motion.button
-              onClick={() => navigate('/')}
+              onClick={() => navigate("/")}
               className="flex flex-col items-center py-2 text-gray-600 hover:text-msc-primary transition-colors"
               whileTap={{ scale: 0.9 }}
             >
               <Home className="w-5 h-5 mb-1" />
               <span className="text-xs">Trang chủ</span>
             </motion.button>
-            
+
             <motion.button
-              onClick={() => navigate('/mentors')}
+              onClick={() => navigate("/mentors")}
               className="flex flex-col items-center py-2 text-gray-600 hover:text-msc-primary transition-colors"
               whileTap={{ scale: 0.9 }}
             >
               <Users className="w-5 h-5 mb-1" />
               <span className="text-xs">Mentors</span>
             </motion.button>
-            
+
             <motion.button
-              onClick={() => navigate('/training')}
+              onClick={() => navigate("/training")}
               className="flex flex-col items-center py-2 text-gray-600 hover:text-msc-primary transition-colors"
               whileTap={{ scale: 0.9 }}
             >

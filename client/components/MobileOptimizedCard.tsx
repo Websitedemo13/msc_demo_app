@@ -48,7 +48,15 @@ const MobileOptimizedCard = ({
 
 // Enhanced Mobile Button component with multiple variants and animations
 interface MobileButtonProps {
-  variant?: "primary" | "secondary" | "ghost" | "success" | "warning" | "danger" | "outline-primary" | "gradient";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "ghost"
+    | "success"
+    | "warning"
+    | "danger"
+    | "outline-primary"
+    | "gradient";
   size?: "sm" | "md" | "lg" | "xl";
   fullWidth?: boolean;
   children: ReactNode;
@@ -84,11 +92,16 @@ export const MobileButton = ({
     secondary:
       "bg-white text-msc-primary border-2 border-msc-primary hover:bg-msc-primary hover:text-white shadow-md hover:shadow-lg",
     ghost: "bg-transparent text-msc-primary hover:bg-msc-blue-50 border-0",
-    success: "bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg hover:shadow-xl border-0",
-    warning: "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:shadow-xl border-0",
-    danger: "bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg hover:shadow-xl border-0",
-    "outline-primary": "bg-transparent text-msc-primary border-2 border-msc-primary hover:bg-msc-blue-50",
-    gradient: "bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-lg hover:shadow-xl border-0",
+    success:
+      "bg-gradient-to-r from-green-500 to-green-600 text-white shadow-lg hover:shadow-xl border-0",
+    warning:
+      "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg hover:shadow-xl border-0",
+    danger:
+      "bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg hover:shadow-xl border-0",
+    "outline-primary":
+      "bg-transparent text-msc-primary border-2 border-msc-primary hover:bg-msc-blue-50",
+    gradient:
+      "bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-lg hover:shadow-xl border-0",
   };
 
   const sizes = {
@@ -100,7 +113,8 @@ export const MobileButton = ({
 
   const widthClass = fullWidth ? "w-full" : "";
   const pulseClass = pulse ? "animate-pulse" : "";
-  const glowClass = glow && variant === "primary" ? "shadow-msc-primary/30" : "";
+  const glowClass =
+    glow && variant === "primary" ? "shadow-msc-primary/30" : "";
 
   return (
     <motion.button
@@ -136,7 +150,7 @@ export const MobileButton = ({
       </AnimatePresence>
 
       {/* Button content */}
-      <motion.div 
+      <motion.div
         className={`flex items-center gap-2 ${loading ? "opacity-0" : "opacity-100"}`}
         transition={{ duration: 0.2 }}
       >
@@ -149,9 +163,9 @@ export const MobileButton = ({
             <Icon className="w-5 h-5" />
           </motion.div>
         )}
-        
+
         <span>{children}</span>
-        
+
         {Icon && iconPosition === "right" && (
           <motion.div
             initial={{ rotate: 0 }}
@@ -196,14 +210,16 @@ export const FloatingActionButton = ({
 }: FloatingActionButtonProps) => {
   const variants = {
     primary: "bg-msc-gradient text-white shadow-2xl",
-    secondary: "bg-white text-msc-primary shadow-2xl border-2 border-msc-primary",
-    success: "bg-gradient-to-r from-green-500 to-green-600 text-white shadow-2xl",
+    secondary:
+      "bg-white text-msc-primary shadow-2xl border-2 border-msc-primary",
+    success:
+      "bg-gradient-to-r from-green-500 to-green-600 text-white shadow-2xl",
     danger: "bg-gradient-to-r from-red-500 to-red-600 text-white shadow-2xl",
   };
 
   const positions = {
     "bottom-right": "bottom-4 right-4",
-    "bottom-left": "bottom-4 left-4", 
+    "bottom-left": "bottom-4 left-4",
     "bottom-center": "bottom-4 left-1/2 transform -translate-x-1/2",
   };
 
@@ -225,7 +241,7 @@ export const FloatingActionButton = ({
       title={tooltip}
     >
       <Icon className="w-6 h-6" />
-      
+
       {/* Pulse rings */}
       {pulse && (
         <>
@@ -266,10 +282,14 @@ export const CardButton = ({
   badge,
 }: CardButtonProps) => {
   const variants = {
-    default: "bg-white border-gray-200 hover:border-msc-primary text-gray-900 hover:text-msc-primary",
-    primary: "bg-msc-blue-50 border-msc-primary text-msc-primary hover:bg-msc-primary hover:text-white",
-    success: "bg-green-50 border-green-200 text-green-700 hover:bg-green-500 hover:text-white",
-    warning: "bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-500 hover:text-white",
+    default:
+      "bg-white border-gray-200 hover:border-msc-primary text-gray-900 hover:text-msc-primary",
+    primary:
+      "bg-msc-blue-50 border-msc-primary text-msc-primary hover:bg-msc-primary hover:text-white",
+    success:
+      "bg-green-50 border-green-200 text-green-700 hover:bg-green-500 hover:text-white",
+    warning:
+      "bg-orange-50 border-orange-200 text-orange-700 hover:bg-orange-500 hover:text-white",
   };
 
   return (
@@ -294,7 +314,7 @@ export const CardButton = ({
         >
           <Icon className="w-6 h-6" />
         </motion.div>
-        
+
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
             <h3 className="font-semibold text-base">{title}</h3>
@@ -314,7 +334,7 @@ export const CardButton = ({
           )}
         </div>
       </div>
-      
+
       {/* Hover effect */}
       <motion.div
         className="absolute inset-0 bg-current opacity-0"
@@ -345,9 +365,10 @@ export const ToggleButton = ({
     <motion.button
       className={`
         px-4 py-2 rounded-full border-2 transition-all duration-300 flex items-center gap-2
-        ${isActive 
-          ? "bg-msc-primary text-white border-msc-primary" 
-          : "bg-white text-msc-primary border-msc-primary hover:bg-msc-blue-50"
+        ${
+          isActive
+            ? "bg-msc-primary text-white border-msc-primary"
+            : "bg-white text-msc-primary border-msc-primary hover:bg-msc-blue-50"
         }
         ${className}
       `}

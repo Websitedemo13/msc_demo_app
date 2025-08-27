@@ -1,11 +1,18 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import MobileOptimizedCard, { MobileButton } from "@/components/MobileOptimizedCard";
-import MobileSectionCard, { InfoItem, ListItem, TimelineItem, SkillsGrid } from "@/components/MobileSectionCard";
-import { 
-  ArrowLeft, 
-  Star, 
+import MobileOptimizedCard, {
+  MobileButton,
+} from "@/components/MobileOptimizedCard";
+import MobileSectionCard, {
+  InfoItem,
+  ListItem,
+  TimelineItem,
+  SkillsGrid,
+} from "@/components/MobileSectionCard";
+import {
+  ArrowLeft,
+  Star,
   Calendar,
   MapPin,
   Briefcase,
@@ -39,15 +46,18 @@ const MSCerDetail = () => {
       avatar: "/api/placeholder/300/300",
       yearGraduated: "2022",
       currentPosition: "Trưởng phòng Marketing, Phó Giám đốc tại Smentor",
-      achievement: "Nhà sáng lập đa ngành, Giảng viên & Chuyên gia tư vấn chiến lược",
-      
+      achievement:
+        "Nhà sáng lập đa ngành, Giảng viên & Chuyên gia tư vấn chiến lược",
+
       // Success Story
-      successStory: "Kiến thức và kỹ năng được hệ thống hóa tại các trung tâm đào tạo đã trở thành nền tảng vững chắc, giúp tôi tự tin sáng lập và điều hành hiệu quả nhiều doanh nghiệp. Đây là nơi cung cấp tư duy chiến lược để biến ý tưởng thành hiện thực.",
-      
+      successStory:
+        "Kiến thức và kỹ năng được hệ thống hóa tại các trung tâm đào tạo đã trở thành nền tảng vững chắc, giúp tôi tự tin sáng lập và điều hành hiệu quả nhiều doanh nghiệp. Đây là nơi cung cấp tư duy chiến lược để biến ý tưởng thành hiện thực.",
+
       // Personal Info
       personalInfo: {
         fullName: "Phạm Hoàng Minh Khánh",
-        education: "Thạc sĩ Quản trị hệ điều hành, Đại học Kinh tế TP.HCM (2022); Cử nhân Marketing, Đại học Tài chính - Marketing (2017)",
+        education:
+          "Thạc sĩ Quản trị hệ điều hành, Đại học Kinh tế TP.HCM (2022); Cử nhân Marketing, Đại học Tài chính - Marketing (2017)",
         currentRole: "Trưởng phòng Marketing, Phó Giám đốc tại Smentor",
         location: "TP. Hồ Chí Minh",
         email: "minh.khanh@msccenter.edu.vn",
@@ -61,32 +71,36 @@ const MSCerDetail = () => {
           period: "2022 - Hiện tại",
           position: "Giám đốc MSC & Phó Giám đốc Smentor",
           company: "MSC Center & Smentor",
-          description: "Lãnh đạo và phát triển các chương trình đào tạo, tư vấn chiến lược cho doanh nghiệp"
+          description:
+            "Lãnh đạo và phát triển các chương trình đào tạo, tư vấn chiến lược cho doanh nghiệp",
         },
         {
           period: "2020 - 2022",
           position: "Trưởng phòng Marketing",
           company: "Smentor Education",
-          description: "Xây dựng và thực hiện chiến lược marketing, tăng trưởng 300% học viên"
+          description:
+            "Xây dựng và thực hiện chiến lược marketing, tăng trưởng 300% học viên",
         },
         {
           period: "2018 - 2020",
           position: "Marketing Specialist",
           company: "VinGroup",
-          description: "Phụ trách marketing cho các dự án bất động sản và thương mại"
+          description:
+            "Phụ trách marketing cho các dự án bất động sản và thương mại",
         },
         {
           period: "2017 - 2018",
           position: "Marketing Executive",
           company: "FPT Corporation",
-          description: "Khởi đầu sự nghiệp với vai trò marketing cho các sản phẩm công nghệ"
+          description:
+            "Khởi đầu sự nghiệp với vai trò marketing cho các sản phẩm công nghệ",
         },
       ],
 
       // Skills & Expertise
       skills: [
         "Strategic Leadership",
-        "Marketing Strategy", 
+        "Marketing Strategy",
         "Business Development",
         "Team Management",
         "Digital Transformation",
@@ -94,7 +108,7 @@ const MSCerDetail = () => {
         "Public Speaking",
         "Project Management",
         "Data Analytics",
-        "Innovation Management"
+        "Innovation Management",
       ],
 
       // Achievements
@@ -104,7 +118,7 @@ const MSCerDetail = () => {
         "Diễn giả tại 50+ sự kiện về kinh doanh và giáo dục",
         "Nhận giải thưởng 'Young Leader of the Year 2023'",
         "Tác giả của 3 cuốn sách về marketing và leadership",
-        "Cố vấn cho 20+ startup trong lĩnh vực giáo dục và công nghệ"
+        "Cố vấn cho 20+ startup trong lĩnh vực giáo dục và công nghệ",
       ],
 
       // Projects
@@ -113,20 +127,20 @@ const MSCerDetail = () => {
           name: "MSC Digital Platform",
           description: "Nền tảng học tập trực tuyến phục vụ 10,000+ học viên",
           year: "2023",
-          role: "Project Lead"
+          role: "Project Lead",
         },
         {
           name: "Youth Leadership Program",
           description: "Chương trình đào tạo lãnh đạo trẻ toàn quốc",
           year: "2022",
-          role: "Program Director"
+          role: "Program Director",
         },
         {
           name: "Corporate Training Initiative",
           description: "Đào tạo doanh nghiệp cho 100+ công ty",
           year: "2021-2023",
-          role: "Strategic Advisor"
-        }
+          role: "Strategic Advisor",
+        },
       ],
 
       // Statistics
@@ -136,15 +150,15 @@ const MSCerDetail = () => {
         projectsCompleted: 25,
         awardsReceived: 8,
         companiesAdvised: 20,
-        eventsSpoken: 50
+        eventsSpoken: 50,
       },
 
       socialLinks: {
         linkedin: "https://linkedin.com/in/pham-hoang-minh-khanh",
         facebook: "https://facebook.com/pham.hoang.minh.khanh",
-        email: "minh.khanh@msccenter.edu.vn"
-      }
-    }
+        email: "minh.khanh@msccenter.edu.vn",
+      },
+    },
   };
 
   const mscer = mscerData[id as keyof typeof mscerData];
@@ -169,7 +183,7 @@ const MSCerDetail = () => {
   return (
     <Layout showMobileNav={false} showDesktopNav={false} showFooter={false}>
       {/* Mobile Header */}
-      <motion.header 
+      <motion.header
         className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -184,13 +198,13 @@ const MSCerDetail = () => {
             <span className="font-medium">Quay lại cộng đồng MSCer</span>
           </Link>
           <div className="flex items-center space-x-3">
-            <motion.button 
+            <motion.button
               className="p-2 rounded-full bg-red-50 text-red-500"
               whileTap={{ scale: 0.9 }}
             >
               <Heart className="w-5 h-5" />
             </motion.button>
-            <motion.button 
+            <motion.button
               className="p-2 rounded-full bg-gray-100 text-gray-600"
               whileTap={{ scale: 0.9 }}
             >
@@ -202,7 +216,7 @@ const MSCerDetail = () => {
 
       <div className="min-h-screen bg-gray-50 pt-20 pb-32">
         {/* Hero Profile Section */}
-        <motion.section 
+        <motion.section
           className="bg-msc-gradient px-4 py-8 text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -210,7 +224,7 @@ const MSCerDetail = () => {
         >
           <div className="text-center">
             {/* Avatar & Badge */}
-            <motion.div 
+            <motion.div
               className="relative mx-auto mb-4"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -218,7 +232,11 @@ const MSCerDetail = () => {
             >
               <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center border-3 border-white/30 shadow-xl mx-auto">
                 <span className="text-white font-bold text-2xl">
-                  {mscer.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                  {mscer.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")
+                    .slice(0, 2)}
                 </span>
               </div>
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center border-2 border-white">
@@ -232,34 +250,44 @@ const MSCerDetail = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <h1 className="text-2xl font-serif font-bold mb-1">{mscer.name}</h1>
-              <p className="text-white/90 text-sm font-medium mb-1">{mscer.title}</p>
+              <h1 className="text-2xl font-serif font-bold mb-1">
+                {mscer.name}
+              </h1>
+              <p className="text-white/90 text-sm font-medium mb-1">
+                {mscer.title}
+              </p>
               <p className="text-white/80 text-xs mb-4">{mscer.company}</p>
             </motion.div>
 
             {/* Stats Row */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-3 gap-4 mb-6"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
               <div className="text-center">
-                <div className="text-lg font-bold mb-1">{mscer.yearGraduated}</div>
+                <div className="text-lg font-bold mb-1">
+                  {mscer.yearGraduated}
+                </div>
                 <span className="text-xs text-white/80">Tốt nghiệp MSC</span>
               </div>
               <div className="text-center">
-                <div className="text-lg font-bold mb-1">{mscer.stats.studentsImpacted}+</div>
+                <div className="text-lg font-bold mb-1">
+                  {mscer.stats.studentsImpacted}+
+                </div>
                 <span className="text-xs text-white/80">Học viên</span>
               </div>
               <div className="text-center">
-                <div className="text-lg font-bold mb-1">{mscer.stats.projectsCompleted}</div>
+                <div className="text-lg font-bold mb-1">
+                  {mscer.stats.projectsCompleted}
+                </div>
                 <span className="text-xs text-white/80">Dự án</span>
               </div>
             </motion.div>
 
             {/* Social Links */}
-            <motion.div 
+            <motion.div
               className="flex justify-center space-x-3"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -318,19 +346,22 @@ const MSCerDetail = () => {
             <div className="space-y-3">
               <InfoItem label="Họ và tên" value={mscer.personalInfo.fullName} />
               <InfoItem label="Học vấn" value={mscer.personalInfo.education} />
-              <InfoItem label="Vị trí hiện tại" value={mscer.personalInfo.currentRole} />
-              <InfoItem 
-                label="Địa điểm" 
-                value={mscer.personalInfo.location} 
+              <InfoItem
+                label="Vị trí hiện tại"
+                value={mscer.personalInfo.currentRole}
+              />
+              <InfoItem
+                label="Địa điểm"
+                value={mscer.personalInfo.location}
                 icon={MapPin}
               />
-              <InfoItem 
-                label="Email" 
+              <InfoItem
+                label="Email"
                 value={mscer.personalInfo.email}
                 icon={Mail}
               />
-              <InfoItem 
-                label="Điện thoại" 
+              <InfoItem
+                label="Điện thoại"
                 value={mscer.personalInfo.phone}
                 icon={Phone}
               />
@@ -385,8 +416,12 @@ const MSCerDetail = () => {
               {mscer.majorProjects.map((project, index) => (
                 <ListItem key={index} color="purple" delay={index * 0.1}>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">{project.name}</h4>
-                    <p className="text-gray-600 text-sm mb-1">{project.description}</p>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      {project.name}
+                    </h4>
+                    <p className="text-gray-600 text-sm mb-1">
+                      {project.description}
+                    </p>
                     <div className="flex justify-between text-xs text-gray-500">
                       <span>{project.year}</span>
                       <span>{project.role}</span>
@@ -418,7 +453,7 @@ const MSCerDetail = () => {
       </div>
 
       {/* Fixed Bottom Action Bar */}
-      <motion.div 
+      <motion.div
         className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-4 z-40"
         initial={{ y: 100 }}
         animate={{ y: 0 }}
@@ -427,7 +462,7 @@ const MSCerDetail = () => {
         <div className="flex space-x-3">
           <MobileButton variant="primary" fullWidth size="lg">
             <MessageCircle className="w-5 h-5" />
-            Kết nối với {mscer.name.split(' ').pop()}
+            Kết nối với {mscer.name.split(" ").pop()}
           </MobileButton>
           <MobileButton variant="secondary" size="lg">
             <Share2 className="w-5 h-5" />

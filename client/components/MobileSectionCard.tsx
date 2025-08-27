@@ -50,7 +50,7 @@ const MobileSectionCard = ({
             >
               <Icon className={`w-5 h-5 ${iconColor}`} />
             </motion.div>
-            
+
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
               {badge && (
@@ -65,7 +65,7 @@ const MobileSectionCard = ({
               )}
             </div>
           </div>
-          
+
           {expandable && (
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -75,7 +75,7 @@ const MobileSectionCard = ({
             </motion.div>
           )}
         </motion.button>
-        
+
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -111,7 +111,7 @@ interface InfoItemProps {
 
 export const InfoItem = ({ label, value, icon: Icon }: InfoItemProps) => {
   return (
-    <motion.div 
+    <motion.div
       className="flex justify-between items-center py-2"
       initial={{ x: -20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
@@ -121,7 +121,9 @@ export const InfoItem = ({ label, value, icon: Icon }: InfoItemProps) => {
         {Icon && <Icon className="w-4 h-4 mr-2 text-gray-400" />}
         <span className="text-gray-600 text-sm">{label}</span>
       </div>
-      <span className="font-medium text-sm text-right max-w-[60%]">{value}</span>
+      <span className="font-medium text-sm text-right max-w-[60%]">
+        {value}
+      </span>
     </motion.div>
   );
 };
@@ -134,15 +136,15 @@ interface ListItemProps {
   delay?: number;
 }
 
-export const ListItem = ({ 
-  children, 
-  icon: Icon, 
+export const ListItem = ({
+  children,
+  icon: Icon,
   color = "blue",
-  delay = 0 
+  delay = 0,
 }: ListItemProps) => {
   const colors = {
     blue: "bg-blue-500",
-    green: "bg-green-500", 
+    green: "bg-green-500",
     purple: "bg-purple-500",
     orange: "bg-orange-500",
     red: "bg-red-500",
@@ -152,7 +154,7 @@ export const ListItem = ({
   const bgColors = {
     blue: "bg-blue-50",
     green: "bg-green-50",
-    purple: "bg-purple-50", 
+    purple: "bg-purple-50",
     orange: "bg-orange-50",
     red: "bg-red-50",
     gray: "bg-gray-50",
@@ -162,22 +164,26 @@ export const ListItem = ({
     blue: "text-blue-600",
     green: "text-green-600",
     purple: "text-purple-600",
-    orange: "text-orange-600", 
+    orange: "text-orange-600",
     red: "text-red-600",
     gray: "text-gray-600",
   };
 
   return (
-    <motion.div 
+    <motion.div
       className={`flex items-start p-3 ${bgColors[color]} rounded-lg`}
       initial={{ x: -20, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.3, delay }}
     >
       {Icon ? (
-        <Icon className={`w-4 h-4 mr-3 ${textColors[color]} flex-shrink-0 mt-0.5`} />
+        <Icon
+          className={`w-4 h-4 mr-3 ${textColors[color]} flex-shrink-0 mt-0.5`}
+        />
       ) : (
-        <div className={`w-2 h-2 ${colors[color]} rounded-full mt-2 mr-3 flex-shrink-0`}></div>
+        <div
+          className={`w-2 h-2 ${colors[color]} rounded-full mt-2 mr-3 flex-shrink-0`}
+        ></div>
       )}
       <div className="text-gray-700 text-sm">{children}</div>
     </motion.div>
@@ -200,7 +206,7 @@ export const TimelineItem = ({
   period,
   description,
   isLast = false,
-  delay = 0
+  delay = 0,
 }: TimelineItemProps) => {
   return (
     <motion.div
@@ -209,14 +215,14 @@ export const TimelineItem = ({
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.3, delay }}
     >
-      <motion.div 
+      <motion.div
         className="absolute w-3 h-3 bg-blue-500 rounded-full -left-2 top-1"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: delay + 0.2, type: "spring", stiffness: 200 }}
       />
-      
-      <motion.div 
+
+      <motion.div
         className="bg-white p-3 rounded-lg border border-gray-100 shadow-sm"
         whileHover={{ scale: 1.02, y: -2 }}
         transition={{ duration: 0.2 }}
@@ -284,17 +290,17 @@ interface StatsCardProps {
   onClick?: () => void;
 }
 
-export const StatsCard = ({ 
-  label, 
-  value, 
-  icon: Icon, 
+export const StatsCard = ({
+  label,
+  value,
+  icon: Icon,
   color = "blue",
-  onClick 
+  onClick,
 }: StatsCardProps) => {
   const colors = {
     blue: "from-blue-500 to-blue-600",
     green: "from-green-500 to-green-600",
-    purple: "from-purple-500 to-purple-600", 
+    purple: "from-purple-500 to-purple-600",
     orange: "from-orange-500 to-orange-600",
     red: "from-red-500 to-red-600",
   };
@@ -314,7 +320,7 @@ export const StatsCard = ({
     >
       <div className="flex items-center justify-between mb-2">
         <Icon className="w-6 h-6 text-white/80" />
-        <motion.span 
+        <motion.span
           className="text-2xl font-bold"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
