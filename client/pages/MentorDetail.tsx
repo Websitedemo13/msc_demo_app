@@ -131,7 +131,7 @@ const MentorDetail = () => {
       ],
       achievements: [
         "Thành lập thành công 3 startup",
-        "Đào tạo hơn 10,000 sinh viên",
+        "Đào tạo h��n 10,000 sinh viên",
         "Nhận giải thưởng 'Educator of the Year 2023'",
         "Tác giả 5 cuốn sách về kinh doanh",
         "Speaker tại hơn 100 sự kiện",
@@ -164,7 +164,8 @@ const MentorDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <Layout showMobileNav={false} showDesktopNav={false} showFooter={false}>
+      <div className="min-h-screen bg-gray-50">
       {/* Mobile Header - Fixed */}
       <motion.header 
         className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200 z-50"
@@ -631,7 +632,8 @@ const MentorDetail = () => {
           </p>
         </div>
       </motion.div>
-    </div>
+      </div>
+    </Layout>
   );
 };
 
